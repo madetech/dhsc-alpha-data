@@ -1,0 +1,10 @@
+{
+	"name": "Datalake",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://dapalphadatastlakedev.dfs.core.windows.net/"
+		}
+	}
+}
