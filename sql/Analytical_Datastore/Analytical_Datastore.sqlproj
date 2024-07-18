@@ -7,6 +7,12 @@
     <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
     <ModelCollation>1033, CI</ModelCollation>
   </PropertyGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="env">
+      <Value>$(SqlCmdVar__1)</Value>
+      <DefaultValue>dev</DefaultValue>
+    </SqlCmdVariable>
+  </ItemGroup>
   <Target Name="BeforeBuild">
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
   </Target>
