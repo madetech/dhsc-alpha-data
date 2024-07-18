@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "value": "dapalpha-adf-data-prod"
+        },
+        "Analytical_Datastore_properties_typeProperties_server": {
+            "value": "dapalpha-sql-data-prod.database.windows.net"
+        },
+        "Analytical_Datastore_properties_typeProperties_database": {
+            "value": "Analytical_Datastore"
+        },
+        "Datalake_properties_typeProperties_url": {
+            "value": "https://dapalphadatastlakeprod.dfs.core.windows.net/"
+        }
+    }
+}
