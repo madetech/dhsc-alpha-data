@@ -1,0 +1,58 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "dapalpha-adf-data-dev"
+		},
+		"Analytical_Datastore_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "dapalpha-sql-data-dev.database.windows.net"
+		},
+		"Analytical_Datastore_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Analytical_Datastore"
+		},
+		"Datalake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dapalphadatastlakedev.dfs.core.windows.net/"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Analytical_Datastore')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('Analytical_Datastore_properties_typeProperties_server')]",
+					"database": "[parameters('Analytical_Datastore_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SystemAssignedManagedIdentity"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Datalake')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('Datalake_properties_typeProperties_url')]"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
