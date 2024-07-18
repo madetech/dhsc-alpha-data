@@ -22,9 +22,9 @@ parameters:
   type: object
   default:
   - name: dev
-    arm_service_connection: '$(dev_arm_service_connection)'
+    arm_service_connection: '$(dev_arm_service_connections)'
   - name: prod
-    arm_service_connection: '$(prod_arm_service_connection)'
+    arm_service_connection: '$(prod_arm_service_connections)'
 - name: skip_dev
   displayName: 'Skip dev deployment'
   type: boolean
