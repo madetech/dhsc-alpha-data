@@ -1,0 +1,61 @@
+{
+	"name": "ASCOF",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Analytical_Datastore",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Year",
+				"type": "varchar"
+			},
+			{
+				"name": "GeographicalCode",
+				"type": "varchar"
+			},
+			{
+				"name": "GeographicalDescription",
+				"type": "varchar"
+			},
+			{
+				"name": "GeographicalLevel",
+				"type": "varchar"
+			},
+			{
+				"name": "ONSCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ASCOFMeasureCode",
+				"type": "varchar"
+			},
+			{
+				"name": "DisaggregationLevel",
+				"type": "varchar"
+			},
+			{
+				"name": "MeasureType",
+				"type": "varchar"
+			},
+			{
+				"name": "MeasureValue",
+				"type": "varchar"
+			},
+			{
+				"name": "MeasureGroup",
+				"type": "varchar"
+			},
+			{
+				"name": "MeasureGroupDescription",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "ASCOF",
+			"table": "all_metrics"
+		}
+	}
+}
