@@ -208,7 +208,7 @@
 												"physicalType": "String"
 											},
 											"sink": {
-												"name": "MeasureGroup",
+												"name": "MeasureGroupDescription",
 												"type": "String",
 												"physicalType": "varchar"
 											}
