@@ -203,6 +203,16 @@
 												"type": "String",
 												"physicalType": "varchar"
 											}
+										},
+										{
+											"source": {
+												"name": "@item().FiscalYear"
+											},
+											"sink": {
+												"name": "Year",
+												"type": "String",
+												"physicalType": "varchar"
+											}
 										}
 									],
 									"typeConversion": true,
