@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "staging-to-final-ASCOF",
 	"properties": {
 		"activities": [
 			{
