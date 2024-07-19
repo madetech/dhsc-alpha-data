@@ -66,6 +66,15 @@
 							"typeProperties": {
 								"source": {
 									"type": "DelimitedTextSource",
+									"additionalColumns": [
+										{
+											"name": "test",
+											"value": {
+												"value": "@item().FiscalYear",
+												"type": "Expression"
+											}
+										}
+									],
 									"storeSettings": {
 										"type": "HttpReadSettings",
 										"requestMethod": "GET"
@@ -199,7 +208,18 @@
 												"physicalType": "String"
 											},
 											"sink": {
-												"name": "MeasureGroupDescription",
+												"name": "MeasureGroup",
+												"type": "String",
+												"physicalType": "varchar"
+											}
+										},
+										{
+											"source": {
+												"name": "test",
+												"type": "String"
+											},
+											"sink": {
+												"name": "Year",
 												"type": "String",
 												"physicalType": "varchar"
 											}
@@ -229,6 +249,11 @@
 				}
 			}
 		],
+		"variables": {
+			"test": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
