@@ -95,6 +95,17 @@
 									"mappings": [
 										{
 											"source": {
+												"name": "FiscalYear",
+												"type": "String"
+											},
+											"sink": {
+												"name": "FiscalYear",
+												"type": "String",
+												"physicalType": "varchar"
+											}
+										},
+										{
+											"source": {
 												"name": "Geographical Code",
 												"type": "String",
 												"physicalType": "String"
@@ -209,17 +220,6 @@
 											},
 											"sink": {
 												"name": "MeasureGroupDescription",
-												"type": "String",
-												"physicalType": "varchar"
-											}
-										},
-										{
-											"source": {
-												"name": "FiscalYear",
-												"type": "String"
-											},
-											"sink": {
-												"name": "Year",
 												"type": "String",
 												"physicalType": "varchar"
 											}
