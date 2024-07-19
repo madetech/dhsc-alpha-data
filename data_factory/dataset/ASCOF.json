@@ -55,7 +55,7 @@
 		],
 		"typeProperties": {
 			"schema": "ASCOF",
-			"table": "all_metrics"
+			"table": "all_metrics_staging"
 		}
 	}
 }
