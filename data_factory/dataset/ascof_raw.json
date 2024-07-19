@@ -1,5 +1,5 @@
 {
-	"name": "ascof_raw_all",
+	"name": "ascof_raw",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "NHS_Digital",
