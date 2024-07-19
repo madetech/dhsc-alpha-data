@@ -9,7 +9,7 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "Year",
+				"name": "FiscalYear",
 				"type": "varchar"
 			},
 			{
