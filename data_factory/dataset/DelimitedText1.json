@@ -10,10 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": {
-					"value": "@activity('LookupYearDownloadURLS').output.firstRow.RelativeURL",
-					"type": "Expression"
-				}
+				"relativeUrl": "@activity('LookupYearDownloadURLs').output.RelativeURL"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
