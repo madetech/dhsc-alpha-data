@@ -68,7 +68,7 @@
 									"type": "DelimitedTextSource",
 									"additionalColumns": [
 										{
-											"name": "test",
+											"name": "FiscalYear",
 											"value": {
 												"value": "@item().FiscalYear",
 												"type": "Expression"
@@ -215,7 +215,7 @@
 										},
 										{
 											"source": {
-												"name": "test",
+												"name": "FiscalYear",
 												"type": "String"
 											},
 											"sink": {
