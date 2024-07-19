@@ -47,7 +47,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('LookupYearDownloadURLs').output",
+						"value": "@activity('LookupYearDownloadURLs').output.value",
 						"type": "Expression"
 					},
 					"activities": [

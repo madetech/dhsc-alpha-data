@@ -1,5 +1,5 @@
 {
-	"name": "ascof_raw_single",
+	"name": "DelimitedText1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "NHS_Digital",
@@ -11,7 +11,7 @@
 			"location": {
 				"type": "HttpServerLocation",
 				"relativeUrl": {
-					"value": "@activity('LookupYearDownloadURLS').output.firstRow.RelativeURL",
+					"value": "@{item().RelativeURL}",
 					"type": "Expression"
 				}
 			},
