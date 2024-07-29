@@ -1,0 +1,28 @@
+{
+	"name": "asc_statistics",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Datalake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Table_1",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Occupancy-visiting-workforce-data-tables-july-2024.xlsx",
+				"folderPath": "ASC_Statistics/Occupancy_Visiting_Workforce",
+				"fileSystem": "raw"
+			},
+			"range": "A3:DK981",
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Table 1: Care homes permitting residents to receive visitors, England, 15 December 2020 to 14 June 2024",
+				"type": "String"
+			}
+		]
+	}
+}
