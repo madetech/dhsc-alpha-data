@@ -34,7 +34,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Area Code",
+									"name": "Area",
 									"type": "String",
 									"physicalType": "String"
 								},
