@@ -1,5 +1,5 @@
 {
-	"name": "asc_statistics_OVW_table_1",
+	"name": "asc_statistics_OVW_table_4",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Datalake",
@@ -8,7 +8,7 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Table_1",
+			"sheetName": "Table_4",
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "Occupancy-visiting-workforce-data-tables-july-2024.xlsx",
