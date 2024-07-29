@@ -15,7 +15,7 @@
 				"folderPath": "ASC_Statistics/Occupancy_Visiting_Workforce",
 				"fileSystem": "raw"
 			},
-			"range": "A3:DK981",
+			"range": "A3:DJ655",
 			"firstRowAsHeader": true
 		},
 		"schema": [
