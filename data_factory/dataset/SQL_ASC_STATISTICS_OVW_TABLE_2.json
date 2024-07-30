@@ -1,5 +1,5 @@
 {
-	"name": "SQL_ASC_STATISTICS_OVW_TABLE_1_copy1",
+	"name": "SQL_ASC_STATISTICS_OVW_TABLE_2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Analytical_Datastore",
