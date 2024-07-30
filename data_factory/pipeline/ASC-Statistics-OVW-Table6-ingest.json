@@ -1,5 +1,5 @@
 {
-	"name": "ASC-Statistics-OVW-Table1-ingest_copy5",
+	"name": "ASC-Statistics-OVW-Table6-ingest",
 	"properties": {
 		"activities": [
 			{
@@ -70,120 +70,12 @@
 							},
 							{
 								"source": {
-									"name": "Measure",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Measure",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
 									"name": "Description",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Description",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Week ending 15/12/2020",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Week ending 15/12/2020",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Week ending 22/12/2020",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Week ending 22/12/2020",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Week ending 29/12/2020",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Week ending 29/12/2020",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Week ending 05/01/2021",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Week ending 05/01/2021",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Week ending 12/01/2021",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Week ending 12/01/2021",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Week ending 19/01/2021",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Week ending 19/01/2021",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Week ending 26/01/2021",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Week ending 26/01/2021",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Week ending 02/02/2021",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Week ending 02/02/2021",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -322,12 +214,12 @@
 							},
 							{
 								"source": {
-									"name": "Week ending 26/04/2021 [note 1]",
+									"name": "Week ending 27/04/2021",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 26/04/2021",
+									"name": "Week ending 27/04/2021",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -478,12 +370,12 @@
 							},
 							{
 								"source": {
-									"name": "Week ending 28/07/2021 [note 1] [note 2]",
+									"name": "Week ending 27/07/2021 [note 2]",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 28/07/2021",
+									"name": "Week ending 27/07/2021",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -910,204 +802,204 @@
 							},
 							{
 								"source": {
-									"name": "Week ending 06/04/2022 [note 3]",
+									"name": "Week ending 05/04/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 06/04/2022",
+									"name": "Week ending 05/04/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 13/04/2022 [note 4]",
+									"name": "Week ending 12/04/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 13/04/2022",
+									"name": "Week ending 12/04/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 20/04/2022",
+									"name": "Week ending 19/04/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 20/04/2022",
+									"name": "Week ending 19/04/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 27/04/2022",
+									"name": "Week ending 26/04/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 27/04/2022",
+									"name": "Week ending 26/04/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 04/05/2022",
+									"name": "Week ending 03/05/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 04/05/2022",
+									"name": "Week ending 03/05/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 11/05/2022",
+									"name": "Week ending 10/05/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 11/05/2022",
+									"name": "Week ending 10/05/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 18/05/2022",
+									"name": "Week ending 17/05/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 18/05/2022",
+									"name": "Week ending 17/05/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 25/05/2022",
+									"name": "Week ending 24/05/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 25/05/2022",
+									"name": "Week ending 24/05/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 01/06/2022",
+									"name": "Week ending 31/05/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 01/06/2022",
+									"name": "Week ending 31/05/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 08/06/2022",
+									"name": "Week ending 07/06/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 08/06/2022",
+									"name": "Week ending 07/06/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 15/06/2022",
+									"name": "Week ending 14/06/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 15/06/2022",
+									"name": "Week ending 14/06/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 22/06/2022",
+									"name": "Week ending 21/06/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 22/06/2022",
+									"name": "Week ending 21/06/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 29/06/2022",
+									"name": "Week ending 28/06/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 29/06/2022",
+									"name": "Week ending 28/06/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 06/07/2022 [note 5]",
+									"name": "Week ending 05/07/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 06/07/2022",
+									"name": "Week ending 05/07/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 13/07/2022",
+									"name": "Week ending 12/07/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 13/07/2022",
+									"name": "Week ending 12/07/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 20/07/2022",
+									"name": "Week ending 19/07/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 20/07/2022",
+									"name": "Week ending 19/07/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Week ending 27/07/2022",
+									"name": "Week ending 26/07/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Week ending 27/07/2022",
+									"name": "Week ending 26/07/2022",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -1398,13 +1290,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "asc_statistics_OVW_table_1",
+						"referenceName": "asc_statistics_OVW_table_6",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SQL_ASC_STATISTICS_OVW_TABLE_1",
+						"referenceName": "SQL_ASC_STATISTICS_OVW_TABLE_6",
 						"type": "DatasetReference"
 					}
 				]
