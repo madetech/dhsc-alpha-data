@@ -1,5 +1,5 @@
 {
-	"name": "ASC-Statistics-OVW-Table1-ingest_copy4",
+	"name": "ASC-Statistics-OVW-Table5-ingest",
 	"properties": {
 		"activities": [
 			{
@@ -64,18 +64,6 @@
 								},
 								"sink": {
 									"name": "Area unit",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Measure",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Measure",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -922,7 +910,7 @@
 							},
 							{
 								"source": {
-									"name": "Week ending 13/04/2022 [note 4]",
+									"name": "Week ending 13/04/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1066,7 +1054,7 @@
 							},
 							{
 								"source": {
-									"name": "Week ending 06/07/2022 [note 5]",
+									"name": "Week ending 06/07/2022",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1398,13 +1386,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "asc_statistics_OVW_table_1",
+						"referenceName": "asc_statistics_OVW_table_5",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SQL_ASC_STATISTICS_OVW_TABLE_1",
+						"referenceName": "SQL_ASC_STATISTICS_OVW_TABLE_5",
 						"type": "DatasetReference"
 					}
 				]
