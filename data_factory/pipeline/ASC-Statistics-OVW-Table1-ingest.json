@@ -1,5 +1,5 @@
 {
-	"name": "ASC-Statistics-ingest",
+	"name": "ASC-Statistics-OVW-Table1-ingest",
 	"properties": {
 		"activities": [
 			{
