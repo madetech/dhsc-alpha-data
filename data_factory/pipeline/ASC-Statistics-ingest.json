@@ -1404,7 +1404,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ASC_STATISTICS_SQL",
+						"referenceName": "SQL_ASC_STATISTICS_OVW_TABLE_1",
 						"type": "DatasetReference"
 					}
 				]
