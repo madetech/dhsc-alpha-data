@@ -1,27 +1,72 @@
 {
-	"name": "asc_statistics_longterm",
+	"name": "asc_statistics_estimated_uptake",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Datalake",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "asc_statistics_raw_files/long-term_support_statistics"
+			"name": "asc_statistics_raw_files/estimated_uptake"
 		},
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Raw_data_",
+			"sheetName": "Table_1",
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Long-term-support-statistics-july-2024-data-tables.xlsx",
-				"folderPath": "ASC_Statistics/Longterm_Support_Statistics",
+				"fileName": "Estimated-uptake-of-dscr-statistics-july-2024-data-tables.xlsx",
+				"folderPath": "ASC_Statistics/Estimated_Uptake_Statistics",
 				"fileSystem": "raw"
 			},
-			"range": "A5:P765",
+			"range": "A2:AG3",
 			"firstRowAsHeader": true
 		},
 		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
 			{
 				"type": "String"
 			},
