@@ -5,6 +5,9 @@
 			"referenceName": "Analytical_Datastore",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "asc_statistics_raw_sql/OVW"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [

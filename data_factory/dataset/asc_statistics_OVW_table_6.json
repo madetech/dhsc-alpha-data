@@ -5,6 +5,9 @@
 			"referenceName": "Datalake",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "asc_statistics_raw_files/OVW"
+		},
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
