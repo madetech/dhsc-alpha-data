@@ -64,7 +64,10 @@
 				"inputs": [
 					{
 						"referenceName": "CQC_location_list",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"perPage": 112750
+						}
 					}
 				],
 				"outputs": [
