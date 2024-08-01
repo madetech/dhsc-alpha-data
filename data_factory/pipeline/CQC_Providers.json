@@ -346,7 +346,8 @@
 												"type": "String"
 											}
 										}
-									]
+									],
+									"mapComplexValuesToString": false
 								}
 							},
 							"inputs": [
