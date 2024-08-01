@@ -24,11 +24,87 @@
 							"supportRFC5988": "true"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['total']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['firstPageUri']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['page']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['previousPageUri']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['lastPageUri']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['nextPageUri']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['perPage']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['totalPages']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['providers'][0]['providerId']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['providers'][0]['providerName']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['uri']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "RestResource1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Json1",
 						"type": "DatasetReference"
 					}
 				]
