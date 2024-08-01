@@ -5,12 +5,6 @@
 			"referenceName": "CQC",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"perPage": {
-				"type": "int",
-				"defaultValue": 100
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
