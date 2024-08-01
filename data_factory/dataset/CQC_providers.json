@@ -9,7 +9,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "providers/@item().providerId/",
+				"value": "@concat('https://your-api-endpoint.com/providers/', item().providerId)\n",
 				"type": "Expression"
 			}
 		},
