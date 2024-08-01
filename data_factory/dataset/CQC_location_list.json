@@ -5,10 +5,16 @@
 			"referenceName": "CQC",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"perPage": {
+				"type": "string",
+				"defaultValue": "10000"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "locations?perPage=10000"
+			"relativeUrl": "locations"
 		},
 		"schema": []
 	}
