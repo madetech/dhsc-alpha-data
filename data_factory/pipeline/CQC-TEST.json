@@ -129,11 +129,24 @@
 							"supportRFC5988": "true"
 						}
 					},
+					"sink": {
+						"type": "RestSink",
+						"httpRequestTimeout": "00:05:00",
+						"requestInterval": 10,
+						"writeBatchSize": 10000,
+						"httpCompressionType": "none"
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "CQC_providers",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "CQC_provider_list",
 						"type": "DatasetReference"
 					}
 				]
