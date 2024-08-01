@@ -44,6 +44,7 @@
 						"value": "@activity('Lookup1').output.value",
 						"type": "Expression"
 					},
+					"batchCount": 50,
 					"activities": [
 						{
 							"name": "Copy data1",
@@ -446,6 +447,14 @@
 				}
 			}
 		],
+		"variables": {
+			"PageNumber": {
+				"type": "Integer"
+			},
+			"TotalPages": {
+				"type": "Integer"
+			}
+		},
 		"annotations": []
 	}
 }
