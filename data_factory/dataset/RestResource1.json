@@ -6,9 +6,8 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"{id}": {
-				"type": "string",
-				"defaultValue": "id"
+			"id": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
