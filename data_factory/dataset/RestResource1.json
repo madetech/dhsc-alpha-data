@@ -5,10 +5,16 @@
 			"referenceName": "CQC",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"{id}": {
+				"type": "string",
+				"defaultValue": "id"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "providers/"
+			"relativeUrl": "providers/{id}"
 		},
 		"schema": []
 	}
