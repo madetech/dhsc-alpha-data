@@ -35,11 +35,6 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['totalPages']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['providers'][0]['providerId']"
 								},
 								"sink": {
