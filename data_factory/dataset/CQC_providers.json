@@ -1,0 +1,15 @@
+{
+	"name": "CQC_providers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CQC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "providers/1-10000227676/"
+		},
+		"schema": []
+	}
+}
