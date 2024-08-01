@@ -21,7 +21,7 @@
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "GET",
 						"paginationRules": {
-							"supportRFC5988": "true"
+							"QueryParameters.{page}": "RANGE:1::1"
 						}
 					},
 					"sink": {
@@ -69,6 +69,14 @@
 				]
 			}
 		],
+		"variables": {
+			"PageNumber": {
+				"type": "Integer"
+			},
+			"TotalPages": {
+				"type": "Integer"
+			}
+		},
 		"annotations": []
 	}
 }
