@@ -8,7 +8,7 @@
 		"parameters": {
 			"perPage": {
 				"type": "int",
-				"defaultValue": 200
+				"defaultValue": 100
 			}
 		},
 		"annotations": [],
