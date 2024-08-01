@@ -35,7 +35,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['providers'][0]['providerId']"
+									"path": "['providerId']"
 								},
 								"sink": {
 									"name": "providerId",
@@ -44,7 +44,7 @@
 							},
 							{
 								"source": {
-									"path": "$['providers'][0]['providerName']"
+									"path": "['providerName']"
 								},
 								"sink": {
 									"name": "providerName",
