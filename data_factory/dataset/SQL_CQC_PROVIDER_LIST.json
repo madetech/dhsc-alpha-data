@@ -1,5 +1,5 @@
 {
-	"name": "SQL_CQC_PROVIDERS",
+	"name": "SQL_CQC_PROVIDER_LIST",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Analytical_Datastore",

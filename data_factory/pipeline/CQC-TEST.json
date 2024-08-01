@@ -63,7 +63,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SQL_CQC_PROVIDERS",
+						"referenceName": "SQL_CQC_PROVIDER_LIST",
 						"type": "DatasetReference"
 					}
 				]
@@ -94,7 +94,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "SQL_CQC_PROVIDERS",
+						"referenceName": "SQL_CQC_PROVIDER_LIST",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
