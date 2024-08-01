@@ -133,7 +133,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CQC_provider_list",
+						"referenceName": "CQC_providers",
 						"type": "DatasetReference"
 					}
 				]
