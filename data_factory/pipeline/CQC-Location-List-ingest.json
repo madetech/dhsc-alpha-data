@@ -75,6 +75,14 @@
 				]
 			}
 		],
+		"variables": {
+			"PageNumber": {
+				"type": "Integer"
+			},
+			"TotalPages": {
+				"type": "Integer"
+			}
+		},
 		"annotations": []
 	}
 }
