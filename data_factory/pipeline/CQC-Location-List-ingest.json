@@ -35,35 +35,44 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "['providerId']"
+									"path": "['locationId']"
 								},
 								"sink": {
-									"name": "providerId",
+									"name": "locationId",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['providerName']"
+									"path": "['locationName']"
 								},
 								"sink": {
-									"name": "providerName",
+									"name": "locationName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['postalCode']"
+								},
+								"sink": {
+									"name": "postalCode",
 									"type": "String"
 								}
 							}
 						],
-						"collectionReference": "$['providers']"
+						"collectionReference": "$['locations']"
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "CQC_provider_list",
+						"referenceName": "CQC_location_list",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SQL_CQC_PROVIDER_LIST",
+						"referenceName": "SQL_CQC_LOCATION_LIST",
 						"type": "DatasetReference"
 					}
 				]

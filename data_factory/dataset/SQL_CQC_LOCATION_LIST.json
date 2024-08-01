@@ -1,0 +1,29 @@
+{
+	"name": "SQL_CQC_LOCATION_LIST",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Analytical_Datastore",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "locationId",
+				"type": "varchar"
+			},
+			{
+				"name": "locationName",
+				"type": "varchar"
+			},
+			{
+				"name": "postalCode",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "CQC",
+			"table": "location_list"
+		}
+	}
+}
