@@ -25,13 +25,9 @@
 						}
 					},
 					"sink": {
-						"type": "JsonSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "JsonWriteSettings"
-						}
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -39,57 +35,25 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['firstPageUri']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['page']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['previousPageUri']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['lastPageUri']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['nextPageUri']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['perPage']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['totalPages']"
 								}
 							},
 							{
 								"source": {
-									"path": "['providerId']"
+									"path": "$['providers'][0]['providerId']"
+								},
+								"sink": {
+									"name": "providerId",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['providerName']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['uri']"
+									"path": "$['providers'][0]['providerName']"
+								},
+								"sink": {
+									"name": "providerName",
+									"type": "String"
 								}
 							}
 						],
@@ -104,7 +68,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Json1",
+						"referenceName": "SQL_CQC_PROVIDERS",
 						"type": "DatasetReference"
 					}
 				]

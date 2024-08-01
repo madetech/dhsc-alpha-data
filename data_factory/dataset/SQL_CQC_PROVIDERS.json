@@ -1,0 +1,25 @@
+{
+	"name": "SQL_CQC_PROVIDERS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Analytical_Datastore",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "providerId",
+				"type": "varchar"
+			},
+			{
+				"name": "providerName",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "CQC",
+			"table": "providers"
+		}
+	}
+}
