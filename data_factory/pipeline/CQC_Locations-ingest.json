@@ -303,6 +303,15 @@
 										},
 										{
 											"source": {
+												"path": "$['website']"
+											},
+											"sink": {
+												"name": "website",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
 												"path": "$['postalAddressLine1']"
 											},
 											"sink": {
