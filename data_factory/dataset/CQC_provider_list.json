@@ -8,7 +8,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "providers?perPage=1000&page={page}"
+			"relativeUrl": "providers?perPage=10000&page={page}"
 		},
 		"schema": []
 	}
