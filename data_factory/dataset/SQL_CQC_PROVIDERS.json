@@ -19,7 +19,7 @@
 		],
 		"typeProperties": {
 			"schema": "CQC",
-			"table": "providers"
+			"table": "provider_list"
 		}
 	}
 }
