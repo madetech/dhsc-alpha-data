@@ -1,0 +1,16 @@
+{
+	"name": "SQL_CQC_DIRECTORY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Analytical_Datastore",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "CQC",
+			"table": "directory"
+		}
+	}
+}

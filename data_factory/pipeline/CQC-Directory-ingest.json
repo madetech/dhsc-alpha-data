@@ -27,16 +27,38 @@
 							"skipLineCount": 4
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "CQC_directory",
 						"type": "DatasetReference"
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQL_CQC_DIRECTORY",
+						"type": "DatasetReference"
+					}
 				]
 			}
 		],
+		"folder": {
+			"name": "CQC"
+		},
 		"annotations": []
 	}
 }
