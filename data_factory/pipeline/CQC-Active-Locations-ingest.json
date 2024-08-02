@@ -1,0 +1,1490 @@
+{
+	"name": "CQC-Active-Locations-ingest",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Location ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location HSCA start date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location HSCA start date",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Dormant (Y/N)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Dormant (Y/N)",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Care home?",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Care home?",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location ODS Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location ODS Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Telephone Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Telephone Number",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Registered manager (note; where there is more than one manager at a location, only one is included here for ease of presentation. The full list is published at the same link as this file by further visiting the link ‘CQC register: nominated individuals, managers and regulated activities’ and using 'HSCA Registered Managers' file).",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Registered manager",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Web Address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Web Address",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Care homes beds",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Care homes beds",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Type/Sector",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Type/Sector",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Inspection Directorate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Inspection Directorate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Primary Inspection Category",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Primary Inspection Category",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Latest Overall Rating",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Latest Overall Rating",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Publication Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Publication Date",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Inherited Rating (Y/N)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Inherited Rating (Y/N)",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Region",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Region",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location NHS Region",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location NHS Region",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Local Authority",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Local Authority",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location ONSPD CCG Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location ONSPD CCG Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location ONSPD CCG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location ONSPD CCG",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Commissioning CCG Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Commissioning CCG Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Commissioning CCG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Commissioning CCG",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Street Address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Street Address",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Address Line 2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Address Line 2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location City",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location City",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location County",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location County",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Postal Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Postal Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location PAF ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location PAF ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location UPRN ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location UPRN ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Latitude",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Latitude",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Longitude",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Longitude",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Location Parliamentary Constituency",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location Parliamentary Constituency",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Brand ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Brand ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Brand Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Brand Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Companies House Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Companies House Number",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Charity Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Charity Number",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider HSCA start date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider HSCA start date",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Type/Sector",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Type/Sector",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Inspection Directorate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Inspection Directorate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Primary Inspection Category",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Primary Inspection Category",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Ownership Type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Ownership Type",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Telephone Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Telephone Number",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Web Address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Web Address",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Street Address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Street Address",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Address Line 2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Address Line 2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider City",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider City",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider County",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider County",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Postal Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Postal Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider PAF ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider PAF ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider UPRN ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider UPRN ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Local Authority",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Local Authority",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Region",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Region",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider NHS Region",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider NHS Region",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Latitude",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Latitude",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Longitude",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Longitude",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Parliamentary Constituency",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Parliamentary Constituency",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Nominated Individual Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Nominated Individual Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Provider Main Partner Name (note; this column only applies where the Provider Ownership Type is Partnership. Where the Provider Ownership Type is Organisation or NHS Body please refer to the Nominated Individual column. Where the Provider Ownership Type is Individual the Provider Name Column gives the individual's name)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Provider Main Partner Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Accommodation for persons who require nursing or personal care",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Accommodation for persons who require nursing or personal care",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Accommodation for persons who require treatment for substance misuse",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Accommodation for persons who require treatment for substance misuse",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Assessment or medical treatment for persons detained under the Mental Health Act 1983",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Assessment or medical treatment for persons detained under the Mental Health Act 1983",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Diagnostic and screening procedures",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Diagnostic and screening procedures",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Family planning",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Family planning",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Management of supply of blood and blood derived products",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Management of supply of blood and blood derived products",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Maternity and midwifery services",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Maternity and midwifery services",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Nursing care",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Nursing care",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Personal care",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Personal care",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Services in slimming clinics",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Services in slimming clinics",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Surgical procedures",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Surgical procedures",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Termination of pregnancies",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Termination of pregnancies",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Transport services, triage and medical advice provided remotely",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Transport services, triage and medical advice provided remotely",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Regulated activity - Treatment of disease, disorder or injury",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Regulated activity - Treatment of disease, disorder or injury",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Acute services with overnight beds",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Acute services with overnight beds",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Acute services without overnight beds / listed acute services with or without overnight beds",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Acute services without overnight beds / listed acute services with or without overnight beds",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Ambulance service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Ambulance service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Blood and Transplant service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Blood and Transplant service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Care home service with nursing",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Care home service with nursing",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Care home service without nursing",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Care home service without nursing",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Community based services for people who misuse substances",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Community based services for people who misuse substances",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Community based services for people with a learning disability",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Community based services for people with a learning disability",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Community based services for people with mental health needs",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Community based services for people with mental health needs",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Community health care services - Nurses Agency only",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Community health care services - Nurses Agency only",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Community healthcare service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Community healthcare service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Dental service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Dental service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Diagnostic and/or screening service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Diagnostic and/or screening service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Diagnostic and/or screening service - single handed sessional providers",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Diagnostic and/or screening service - single handed sessional providers",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Doctors consultation service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Doctors consultation service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Doctors treatment service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Doctors treatment service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Domiciliary care service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Domiciliary care service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Extra Care housing services",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Extra Care housing services",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Hospice services",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Hospice services",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Hospice services at home",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Hospice services at home",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Hospital services for people with mental health needs, learning disabilities and problems with substance misuse",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Hospital services for people with mental health needs, learning disabilities and problems with substance misuse",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Hyperbaric Chamber",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Hyperbaric Chamber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Long term conditions services",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Long term conditions services",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Mobile doctors service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Mobile doctors service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Prison Healthcare Services",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Prison Healthcare Services",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Rehabilitation services",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Rehabilitation services",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Remote clinical advice service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Remote clinical advice service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Residential substance misuse treatment and/or rehabilitation service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Residential substance misuse treatment and/or rehabilitation service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Shared Lives",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Shared Lives",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Specialist college service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Specialist college service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Supported living service",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Supported living service",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service type - Urgent care services",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service type - Urgent care services",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - Children 0-18 years",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - Children 0-18 years",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - Dementia",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - Dementia",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - Learning disabilities or autistic spectrum disorder",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - Learning disabilities or autistic spectrum disorder",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - Mental Health",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - Mental Health",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - Older People",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - Older People",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - People detained under the Mental Health Act",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - People detained under the Mental Health Act",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - People who misuse drugs and alcohol",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - People who misuse drugs and alcohol",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - People with an eating disorder",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - People with an eating disorder",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - Physical Disability",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - Physical Disability",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - Sensory Impairment",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - Sensory Impairment",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - Whole Population",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - Whole Population",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service user band - Younger Adults",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service user band - Younger Adults",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CQC_Active_Locations",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "CQC"
+		},
+		"annotations": []
+	}
+}

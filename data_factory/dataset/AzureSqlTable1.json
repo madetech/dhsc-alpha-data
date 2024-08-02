@@ -1,0 +1,493 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Analytical_Datastore",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Location ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Location HSCA start date",
+				"type": "varchar"
+			},
+			{
+				"name": "Dormant (Y/N)",
+				"type": "varchar"
+			},
+			{
+				"name": "Care home?",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Location ODS Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Telephone Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Registered manager",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Web Address",
+				"type": "varchar"
+			},
+			{
+				"name": "Care homes beds",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Type/Sector",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Inspection Directorate",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Primary Inspection Category",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Latest Overall Rating",
+				"type": "varchar"
+			},
+			{
+				"name": "Publication Date",
+				"type": "varchar"
+			},
+			{
+				"name": "Inherited Rating (Y/N)",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Region",
+				"type": "varchar"
+			},
+			{
+				"name": "Location NHS Region",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Local Authority",
+				"type": "varchar"
+			},
+			{
+				"name": "Location ONSPD CCG Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Location ONSPD CCG",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Commissioning CCG Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Commissioning CCG",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Street Address",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Address Line 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Location City",
+				"type": "varchar"
+			},
+			{
+				"name": "Location County",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Postal Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Location PAF ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Location UPRN ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Latitude",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Longitude",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Parliamentary Constituency",
+				"type": "varchar"
+			},
+			{
+				"name": "Brand ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Brand Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Companies House Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Charity Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider HSCA start date",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Type/Sector",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Inspection Directorate",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Primary Inspection Category",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Ownership Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Telephone Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Web Address",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Street Address",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Address Line 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider City",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider County",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Postal Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider PAF ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider UPRN ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Local Authority",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Region",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider NHS Region",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Latitude",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Longitude",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Parliamentary Constituency",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Nominated Individual Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Main Partner Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Accommodation for persons who require nursing or personal care",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Accommodation for persons who require treatment for substance misuse",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Assessment or medical treatment for persons detained under the Mental Health Act 1983",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Diagnostic and screening procedures",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Family planning",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Management of supply of blood and blood derived products",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Maternity and midwifery services",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Nursing care",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Personal care",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Services in slimming clinics",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Surgical procedures",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Termination of pregnancies",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Transport services, triage and medical advice provided remotely",
+				"type": "varchar"
+			},
+			{
+				"name": "Regulated activity - Treatment of disease, disorder or injury",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Acute services with overnight beds",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Acute services without overnight beds / listed acute services with or without overnight beds",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Ambulance service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Blood and Transplant service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Care home service with nursing",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Care home service without nursing",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Community based services for people who misuse substances",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Community based services for people with a learning disability",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Community based services for people with mental health needs",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Community health care services - Nurses Agency only",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Community healthcare service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Dental service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Diagnostic and/or screening service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Diagnostic and/or screening service - single handed sessional providers",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Doctors consultation service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Doctors treatment service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Domiciliary care service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Extra Care housing services",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Hospice services",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Hospice services at home",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Hospital services for people with mental health needs, learning disabilities and problems with substance misuse",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Hyperbaric Chamber",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Long term conditions services",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Mobile doctors service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Prison Healthcare Services",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Rehabilitation services",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Remote clinical advice service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Residential substance misuse treatment and/or rehabilitation service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Shared Lives",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Specialist college service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Supported living service",
+				"type": "varchar"
+			},
+			{
+				"name": "Service type - Urgent care services",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - Children 0-18 years",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - Dementia",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - Learning disabilities or autistic spectrum disorder",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - Mental Health",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - Older People",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - People detained under the Mental Health Act",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - People who misuse drugs and alcohol",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - People with an eating disorder",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - Physical Disability",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - Sensory Impairment",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - Whole Population",
+				"type": "varchar"
+			},
+			{
+				"name": "Service user band - Younger Adults",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "CQC",
+			"table": "active_locations"
+		}
+	}
+}
