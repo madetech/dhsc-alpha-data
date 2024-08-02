@@ -1,5 +1,5 @@
 {
-	"name": "ASC-Statistics-OVW-Table1-ingest",
+	"name": "ASC-Statistics-Occupancy-Visiting-Workforce-Table1-ingest",
 	"properties": {
 		"activities": [
 			{
@@ -1411,7 +1411,7 @@
 			}
 		],
 		"folder": {
-			"name": "ASC-Statistics/ASC-Statistics-OVW-ingest"
+			"name": "ASC-Statistics/ASC-Statistics-Occupancy-Visiting-Workforce-ingest"
 		},
 		"annotations": []
 	}
