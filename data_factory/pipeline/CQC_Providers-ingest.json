@@ -399,11 +399,32 @@
 					},
 					"firstRowOnly": true
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookup2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
 			}
 		],
 		"variables": {
-			"PageNumber": {
+			"TotalCount": {
 				"type": "Integer"
+			},
+			"BatchSize": {
+				"type": "Integer",
+				"defaultValue": 5000
 			},
 			"TotalPages": {
 				"type": "Integer"
