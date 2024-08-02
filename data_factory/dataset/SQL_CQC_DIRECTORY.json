@@ -13,7 +13,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "CQC",
-			"table": "directory"
+			"table": "directory_staging"
 		}
 	}
 }

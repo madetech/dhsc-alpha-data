@@ -490,7 +490,7 @@
 		],
 		"typeProperties": {
 			"schema": "CQC",
-			"table": "active_locations"
+			"table": "active_locations_staging"
 		}
 	}
 }
