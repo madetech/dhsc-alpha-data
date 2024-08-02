@@ -1476,7 +1476,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "SQL_CQC_ACTIVE_LOCATIONS",
 						"type": "DatasetReference"
 					}
 				]

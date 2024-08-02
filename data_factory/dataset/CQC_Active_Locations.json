@@ -5,6 +5,9 @@
 			"referenceName": "Datalake",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "CQC_Static"
+		},
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {

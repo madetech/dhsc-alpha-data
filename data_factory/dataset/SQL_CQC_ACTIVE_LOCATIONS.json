@@ -1,9 +1,12 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "SQL_CQC_ACTIVE_LOCATIONS",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Analytical_Datastore",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "CQC_Static"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
