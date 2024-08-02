@@ -13,6 +13,9 @@
       <DefaultValue>dev</DefaultValue>
     </SqlCmdVariable>
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="post_deploy_access.sql" />
+  </ItemGroup>
   <Target Name="BeforeBuild">
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
   </Target>
