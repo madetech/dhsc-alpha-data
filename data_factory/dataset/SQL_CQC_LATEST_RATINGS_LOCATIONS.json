@@ -98,7 +98,7 @@
 		],
 		"typeProperties": {
 			"schema": "CQC",
-			"table": "latest_ratings_providers_staging"
+			"table": "latest_ratings_locations_staging"
 		}
 	}
 }
