@@ -466,7 +466,7 @@
 		],
 		"typeProperties": {
 			"schema": "ASC_Statistics",
-			"table": "OVW_Table_8"
+			"table": "occupancy_visiting_workforce_table_8_staging"
 		}
 	}
 }
