@@ -11,7 +11,7 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Providers",
+			"sheetName": "Locations",
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "01_July_2024_Latest_ratings.xlsx",
