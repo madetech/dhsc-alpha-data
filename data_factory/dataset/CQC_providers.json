@@ -1,10 +1,6 @@
 {
 	"name": "CQC_providers",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "CQC",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "CQC_API"
 		},
