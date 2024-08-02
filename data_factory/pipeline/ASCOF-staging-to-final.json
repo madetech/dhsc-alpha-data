@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[ASCOF].[p_AllMetrics]"
+					"storedProcedureName": "[ASCOF].[p_staging_to_final]"
 				},
 				"linkedServiceName": {
 					"referenceName": "Analytical_Datastore",
