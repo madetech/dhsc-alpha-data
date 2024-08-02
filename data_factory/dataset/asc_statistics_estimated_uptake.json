@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "asc_statistics_raw_files/estimated_uptake"
+			"name": "ASC_Statistics/asc_statistics_raw_files/estimated_uptake"
 		},
 		"annotations": [],
 		"type": "Excel",

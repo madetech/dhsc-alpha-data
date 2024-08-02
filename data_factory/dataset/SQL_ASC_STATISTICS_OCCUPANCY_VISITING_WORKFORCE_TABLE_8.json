@@ -1,12 +1,12 @@
 {
-	"name": "SQL_ASC_STATISTICS_OVW_TABLE_8",
+	"name": "SQL_ASC_STATISTICS_OCCUPANCY_VISITING_WORKFORCE_TABLE_8",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Analytical_Datastore",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "asc_statistics_raw_sql/OVW"
+			"name": "ASC_Statistics/asc_statistics_raw_sql/occupancy_visiting_workforce"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",

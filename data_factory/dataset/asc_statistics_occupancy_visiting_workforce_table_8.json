@@ -1,12 +1,12 @@
 {
-	"name": "asc_statistics_OVW_table_8",
+	"name": "asc_statistics_occupancy_visiting_workforce_table_8",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Datalake",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "asc_statistics_raw_files/OVW"
+			"name": "ASC_Statistics/asc_statistics_raw_files/occupancy_visiting_workforce"
 		},
 		"annotations": [],
 		"type": "Excel",

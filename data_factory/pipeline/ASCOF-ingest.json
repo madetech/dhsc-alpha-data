@@ -240,7 +240,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "ASCOF",
+									"referenceName": "SQL_ASCOF",
 									"type": "DatasetReference"
 								}
 							]

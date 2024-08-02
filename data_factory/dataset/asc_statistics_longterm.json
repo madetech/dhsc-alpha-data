@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "asc_statistics_raw_files/long-term_support_statistics"
+			"name": "ASC_Statistics/asc_statistics_raw_files/long-term_support_statistics"
 		},
 		"annotations": [],
 		"type": "Excel",

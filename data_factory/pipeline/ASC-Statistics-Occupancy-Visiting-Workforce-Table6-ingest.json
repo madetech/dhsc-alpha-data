@@ -1290,20 +1290,20 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "asc_statistics_OVW_table_6",
+						"referenceName": "asc_statistics_occupancy_visiting_workforce_table_6",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SQL_ASC_STATISTICS_OVW_TABLE_6",
+						"referenceName": "SQL_ASC_STATISTICS_OCCUPANCY_VISITING_WORKFORCE_TABLE_6",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
 		"folder": {
-			"name": "ASC-Statistics/ASC-Statistics-Occupancy-Visiting-Workforce-ingest"
+			"name": "ASC_Statistics/ASC-Statistics-Occupancy-Visiting-Workforce-ingest"
 		},
 		"annotations": []
 	}

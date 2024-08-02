@@ -1,5 +1,5 @@
 {
-	"name": "ASCOF",
+	"name": "SQL_ASCOF",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Analytical_Datastore",
