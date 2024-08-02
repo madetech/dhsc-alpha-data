@@ -34,8 +34,9 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "Provider ID",
 									"type": "String",
-									"ordinal": 1
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider ID",
@@ -45,8 +46,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider ODS Code",
 									"type": "String",
-									"ordinal": 2
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider ODS Code",
@@ -56,8 +58,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider Name",
 									"type": "String",
-									"ordinal": 3
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider Name",
@@ -67,8 +70,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider Type",
 									"type": "String",
-									"ordinal": 4
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider Type",
@@ -78,8 +82,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider Primary Inspection Category",
 									"type": "String",
-									"ordinal": 5
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider Primary Inspection Category",
@@ -89,8 +94,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider Street Address",
 									"type": "String",
-									"ordinal": 6
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider Street Address",
@@ -100,8 +106,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider Address Line 2",
 									"type": "String",
-									"ordinal": 7
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider Address Line 2",
@@ -111,8 +118,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider City",
 									"type": "String",
-									"ordinal": 8
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider City",
@@ -122,8 +130,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider Post Code",
 									"type": "String",
-									"ordinal": 9
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider Post Code",
@@ -133,8 +142,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider Local Authority",
 									"type": "String",
-									"ordinal": 10
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider Local Authority",
@@ -144,8 +154,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider Region",
 									"type": "String",
-									"ordinal": 11
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider Region",
@@ -155,8 +166,9 @@
 							},
 							{
 								"source": {
+									"name": "Provider NHS Region",
 									"type": "String",
-									"ordinal": 12
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Provider NHS Region",
@@ -166,8 +178,9 @@
 							},
 							{
 								"source": {
+									"name": "Service / Population Group",
 									"type": "String",
-									"ordinal": 13
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Service / Population Group",
@@ -177,8 +190,9 @@
 							},
 							{
 								"source": {
+									"name": "Domain",
 									"type": "String",
-									"ordinal": 14
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Domain",
@@ -188,8 +202,9 @@
 							},
 							{
 								"source": {
+									"name": "Latest Rating",
 									"type": "String",
-									"ordinal": 15
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Latest Rating",
@@ -199,8 +214,9 @@
 							},
 							{
 								"source": {
+									"name": "Publication Date",
 									"type": "String",
-									"ordinal": 16
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Publication Date",
@@ -210,8 +226,9 @@
 							},
 							{
 								"source": {
+									"name": "Report Type",
 									"type": "String",
-									"ordinal": 17
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Report Type",
@@ -221,8 +238,9 @@
 							},
 							{
 								"source": {
+									"name": "Inherited Rating (Y/N)",
 									"type": "String",
-									"ordinal": 18
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Inherited Rating (Y/N)",
@@ -232,8 +250,9 @@
 							},
 							{
 								"source": {
+									"name": "URL",
 									"type": "String",
-									"ordinal": 19
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "URL",
@@ -243,8 +262,9 @@
 							},
 							{
 								"source": {
+									"name": "Brand ID",
 									"type": "String",
-									"ordinal": 20
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Brand ID",
@@ -254,8 +274,9 @@
 							},
 							{
 								"source": {
+									"name": "Brand Name",
 									"type": "String",
-									"ordinal": 21
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Brand Name",
@@ -286,7 +307,7 @@
 			}
 		],
 		"folder": {
-			"name": "CQC"
+			"name": "CQC_Static"
 		},
 		"annotations": []
 	}

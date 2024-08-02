@@ -86,6 +86,9 @@
 				"type": "Integer"
 			}
 		},
+		"folder": {
+			"name": "CQC_API"
+		},
 		"annotations": []
 	}
 }

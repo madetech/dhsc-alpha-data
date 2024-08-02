@@ -252,7 +252,16 @@
 		"variables": {
 			"test": {
 				"type": "String"
+			},
+			"PageNumber": {
+				"type": "Integer"
+			},
+			"TotalPages": {
+				"type": "Integer"
 			}
+		},
+		"folder": {
+			"name": "ASCOF"
 		},
 		"annotations": []
 	}
