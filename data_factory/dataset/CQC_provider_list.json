@@ -5,6 +5,9 @@
 			"referenceName": "CQC",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "CQC_API"
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {

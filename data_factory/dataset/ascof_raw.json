@@ -5,6 +5,9 @@
 			"referenceName": "NHS_Digital",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "ASCOF"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {

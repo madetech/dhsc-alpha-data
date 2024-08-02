@@ -5,6 +5,9 @@
 			"referenceName": "Datalake",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "CQC_API"
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {

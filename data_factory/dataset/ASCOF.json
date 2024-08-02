@@ -5,6 +5,9 @@
 			"referenceName": "Analytical_Datastore",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "ASCOF"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
