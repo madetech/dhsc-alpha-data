@@ -1,0 +1,104 @@
+{
+	"name": "SQL_CQC_LATEST_RATINGS_LOCATIONS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Analytical_Datastore",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "CQC_Static"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Provider ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider ODS Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Primary Inspection Category",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Street Address",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Address Line 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider City",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Post Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Local Authority",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider Region",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider NHS Region",
+				"type": "varchar"
+			},
+			{
+				"name": "Service / Population Group",
+				"type": "varchar"
+			},
+			{
+				"name": "Domain",
+				"type": "varchar"
+			},
+			{
+				"name": "Latest Rating",
+				"type": "varchar"
+			},
+			{
+				"name": "Publication Date",
+				"type": "varchar"
+			},
+			{
+				"name": "Report Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Inherited Rating (Y/N)",
+				"type": "varchar"
+			},
+			{
+				"name": "URL",
+				"type": "varchar"
+			},
+			{
+				"name": "Brand ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Brand Name",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "CQC",
+			"table": "latest_ratings_locations_staging"
+		}
+	}
+}

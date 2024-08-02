@@ -1,0 +1,502 @@
+{
+	"name": "CQC_Active_Locations",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Datalake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "CQC_Static"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "HSCA_Active_Locations",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "01_july_2024_HSCA_Active_Locations.xlsx",
+				"folderPath": "CQC/Static",
+				"fileSystem": "raw"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Location ID",
+				"type": "String"
+			},
+			{
+				"name": "Location HSCA start date",
+				"type": "String"
+			},
+			{
+				"name": "Dormant (Y/N)",
+				"type": "String"
+			},
+			{
+				"name": "Care home?",
+				"type": "String"
+			},
+			{
+				"name": "Location Name",
+				"type": "String"
+			},
+			{
+				"name": "Location ODS Code",
+				"type": "String"
+			},
+			{
+				"name": "Location Telephone Number",
+				"type": "String"
+			},
+			{
+				"name": "Registered manager (note; where there is more than one manager at a location, only one is included here for ease of presentation. The full list is published at the same link as this file by further visiting the link ‘CQC register: nominated individuals, managers and regulated activities’ and using 'HSCA Registered Managers' file).",
+				"type": "String"
+			},
+			{
+				"name": "Location Web Address",
+				"type": "String"
+			},
+			{
+				"name": "Care homes beds",
+				"type": "String"
+			},
+			{
+				"name": "Location Type/Sector",
+				"type": "String"
+			},
+			{
+				"name": "Location Inspection Directorate",
+				"type": "String"
+			},
+			{
+				"name": "Location Primary Inspection Category",
+				"type": "String"
+			},
+			{
+				"name": "Location Latest Overall Rating",
+				"type": "String"
+			},
+			{
+				"name": "Publication Date",
+				"type": "String"
+			},
+			{
+				"name": "Inherited Rating (Y/N)",
+				"type": "String"
+			},
+			{
+				"name": "Location Region",
+				"type": "String"
+			},
+			{
+				"name": "Location NHS Region",
+				"type": "String"
+			},
+			{
+				"name": "Location Local Authority",
+				"type": "String"
+			},
+			{
+				"name": "Location ONSPD CCG Code",
+				"type": "String"
+			},
+			{
+				"name": "Location ONSPD CCG",
+				"type": "String"
+			},
+			{
+				"name": "Location Commissioning CCG Code",
+				"type": "String"
+			},
+			{
+				"name": "Location Commissioning CCG",
+				"type": "String"
+			},
+			{
+				"name": "Location Street Address",
+				"type": "String"
+			},
+			{
+				"name": "Location Address Line 2",
+				"type": "String"
+			},
+			{
+				"name": "Location City",
+				"type": "String"
+			},
+			{
+				"name": "Location County",
+				"type": "String"
+			},
+			{
+				"name": "Location Postal Code",
+				"type": "String"
+			},
+			{
+				"name": "Location PAF ID",
+				"type": "String"
+			},
+			{
+				"name": "Location UPRN ID",
+				"type": "String"
+			},
+			{
+				"name": "Location Latitude",
+				"type": "String"
+			},
+			{
+				"name": "Location Longitude",
+				"type": "String"
+			},
+			{
+				"name": "Location Parliamentary Constituency",
+				"type": "String"
+			},
+			{
+				"name": "Brand ID",
+				"type": "String"
+			},
+			{
+				"name": "Brand Name",
+				"type": "String"
+			},
+			{
+				"name": "Provider Companies House Number",
+				"type": "String"
+			},
+			{
+				"name": "Provider Charity Number",
+				"type": "String"
+			},
+			{
+				"name": "Provider ID",
+				"type": "String"
+			},
+			{
+				"name": "Provider Name",
+				"type": "String"
+			},
+			{
+				"name": "Provider HSCA start date",
+				"type": "String"
+			},
+			{
+				"name": "Provider Type/Sector",
+				"type": "String"
+			},
+			{
+				"name": "Provider Inspection Directorate",
+				"type": "String"
+			},
+			{
+				"name": "Provider Primary Inspection Category",
+				"type": "String"
+			},
+			{
+				"name": "Provider Ownership Type",
+				"type": "String"
+			},
+			{
+				"name": "Provider Telephone Number",
+				"type": "String"
+			},
+			{
+				"name": "Provider Web Address",
+				"type": "String"
+			},
+			{
+				"name": "Provider Street Address",
+				"type": "String"
+			},
+			{
+				"name": "Provider Address Line 2",
+				"type": "String"
+			},
+			{
+				"name": "Provider City",
+				"type": "String"
+			},
+			{
+				"name": "Provider County",
+				"type": "String"
+			},
+			{
+				"name": "Provider Postal Code",
+				"type": "String"
+			},
+			{
+				"name": "Provider PAF ID",
+				"type": "String"
+			},
+			{
+				"name": "Provider UPRN ID",
+				"type": "String"
+			},
+			{
+				"name": "Provider Local Authority",
+				"type": "String"
+			},
+			{
+				"name": "Provider Region",
+				"type": "String"
+			},
+			{
+				"name": "Provider NHS Region",
+				"type": "String"
+			},
+			{
+				"name": "Provider Latitude",
+				"type": "String"
+			},
+			{
+				"name": "Provider Longitude",
+				"type": "String"
+			},
+			{
+				"name": "Provider Parliamentary Constituency",
+				"type": "String"
+			},
+			{
+				"name": "Provider Nominated Individual Name",
+				"type": "String"
+			},
+			{
+				"name": "Provider Main Partner Name (note; this column only applies where the Provider Ownership Type is Partnership. Where the Provider Ownership Type is Organisation or NHS Body please refer to the Nominated Individual column. Where the Provider Ownership Type is Individual the Provider Name Column gives the individual's name)",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Accommodation for persons who require nursing or personal care",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Accommodation for persons who require treatment for substance misuse",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Assessment or medical treatment for persons detained under the Mental Health Act 1983",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Diagnostic and screening procedures",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Family planning",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Management of supply of blood and blood derived products",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Maternity and midwifery services",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Nursing care",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Personal care",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Services in slimming clinics",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Surgical procedures",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Termination of pregnancies",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Transport services, triage and medical advice provided remotely",
+				"type": "String"
+			},
+			{
+				"name": "Regulated activity - Treatment of disease, disorder or injury",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Acute services with overnight beds",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Acute services without overnight beds / listed acute services with or without overnight beds",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Ambulance service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Blood and Transplant service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Care home service with nursing",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Care home service without nursing",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Community based services for people who misuse substances",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Community based services for people with a learning disability",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Community based services for people with mental health needs",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Community health care services - Nurses Agency only",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Community healthcare service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Dental service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Diagnostic and/or screening service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Diagnostic and/or screening service - single handed sessional providers",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Doctors consultation service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Doctors treatment service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Domiciliary care service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Extra Care housing services",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Hospice services",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Hospice services at home",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Hospital services for people with mental health needs, learning disabilities and problems with substance misuse",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Hyperbaric Chamber",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Long term conditions services",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Mobile doctors service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Prison Healthcare Services",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Rehabilitation services",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Remote clinical advice service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Residential substance misuse treatment and/or rehabilitation service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Shared Lives",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Specialist college service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Supported living service",
+				"type": "String"
+			},
+			{
+				"name": "Service type - Urgent care services",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - Children 0-18 years",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - Dementia",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - Learning disabilities or autistic spectrum disorder",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - Mental Health",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - Older People",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - People detained under the Mental Health Act",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - People who misuse drugs and alcohol",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - People with an eating disorder",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - Physical Disability",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - Sensory Impairment",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - Whole Population",
+				"type": "String"
+			},
+			{
+				"name": "Service user band - Younger Adults",
+				"type": "String"
+			}
+		]
+	}
+}
