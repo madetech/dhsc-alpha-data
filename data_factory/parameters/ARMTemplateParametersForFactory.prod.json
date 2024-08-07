@@ -13,6 +13,12 @@
         },
         "Datalake_properties_typeProperties_url": {
             "value": "https://dapalphadatastlakeprod.dfs.core.windows.net/"
+        },
+        "DAPAlphaDatalakeEndpoint_properties_privateLinkResourceId": {
+            "value": "/subscriptions/211beb99-abed-432d-b6b5-6b0a0b3bb4ac/resourceGroups/dapalpha-data-prod-rg/providers/Microsoft.Storage/storageAccounts/dapalphadatastlakeprod"
+        },
+        "DAPAlphaSQLServerEndpoint_properties_privateLinkResourceId": {
+            "value": "/subscriptions/211beb99-abed-432d-b6b5-6b0a0b3bb4ac/resourceGroups/dapalpha-data-prod-rg/providers/Microsoft.Sql/servers/dapalpha-sql-data-prod"
         }
     }
 }
