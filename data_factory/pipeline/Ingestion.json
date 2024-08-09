@@ -87,7 +87,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"RelativeURL": {
-											"value": "@concat(\n    'all_data/csv/for_one_indicator?indicator_id=',\n    item().value\n)",
+											"value": "@concat(\n    'all_data/csv/for_one_indicator?indicator_id=',\n    item().indicator_id\n)",
 											"type": "Expression"
 										}
 									}
