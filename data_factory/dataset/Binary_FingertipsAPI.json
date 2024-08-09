@@ -1,5 +1,5 @@
 {
-	"name": "Binary_Web",
+	"name": "Binary_FingertipsAPI",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "FingertipsAPIHTTP",
