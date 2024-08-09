@@ -1,0 +1,9 @@
+{
+	"name": "Ingestion",
+	"properties": {
+		"folder": {
+			"name": "Fingertips"
+		},
+		"annotations": []
+	}
+}
