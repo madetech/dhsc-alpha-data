@@ -49,6 +49,7 @@
 						"value": "@activity('Get enabled indicator ids').output.value",
 						"type": "Expression"
 					},
+					"batchCount": 5,
 					"activities": [
 						{
 							"name": "Ingestion worker",
