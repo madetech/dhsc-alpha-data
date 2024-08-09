@@ -28,7 +28,8 @@
 							"schema": "Fingertips",
 							"table_name": "Indicator_Metadata"
 						}
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
@@ -45,7 +46,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get enabled indicator ids').output['indicator_id']",
+						"value": "@activity('Get enabled indicator ids').output.value",
 						"type": "Expression"
 					},
 					"activities": [
