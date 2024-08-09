@@ -1,0 +1,9 @@
+{
+	"name": "Ingestion Worker",
+	"properties": {
+		"folder": {
+			"name": "Fingertips"
+		},
+		"annotations": []
+	}
+}
