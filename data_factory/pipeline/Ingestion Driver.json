@@ -180,6 +180,28 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "Ingestion worker",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "Ingestion Worker",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"indicator_id": {
+										"value": "@item().indicator_id",
+										"type": "Expression"
+									}
+								}
+							}
 						}
 					]
 				}
