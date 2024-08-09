@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
+				"name": "Get enabled indicator ids",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
