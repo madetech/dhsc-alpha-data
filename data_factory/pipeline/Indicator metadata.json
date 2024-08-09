@@ -48,7 +48,7 @@
 						"parameters": {
 							"container": "raw",
 							"filepath": "Fingertips/Indicator_Metadata/",
-							"filename": "metric_metadata",
+							"filename": "metric_metadata.xlsx",
 							"sheet_index": 0
 						}
 					}
