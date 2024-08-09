@@ -39,7 +39,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"RelativeURL": {
-								"value": "@concat(\n    'all_data/csv/for_one_indicator?indicator_id=',\n    item().indicator_id\n)",
+								"value": "@concat(\n    'all_data/csv/for_one_indicator?indicator_id=',\n    pipeline().parameters.indicator_id\n)",
 								"type": "Expression"
 							}
 						}
@@ -53,7 +53,7 @@
 							"container": "raw",
 							"filepath": "Fingertips/Indicators",
 							"filename": {
-								"value": "@concat('indicator_', concat(item().indicator_id, '.csv'))",
+								"value": "@concat('indicator_', concat(pipeline().parameters.indicator_id, '.csv'))",
 								"type": "Expression"
 							}
 						}
@@ -116,7 +116,7 @@
 							"container": "raw",
 							"filepath": "Fingertips/Indicators",
 							"filename": {
-								"value": "@concat('indicator_', concat(item().indicator_id, '.csv'))",
+								"value": "@concat('indicator_', concat(pipeline().parameters.indicator_id, '.csv'))",
 								"type": "Expression"
 							}
 						}
