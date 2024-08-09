@@ -119,7 +119,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"schema": "Fingertips",
-							"table_name": "indicator"
+							"table_name": "indicator_staging"
 						}
 					}
 				]
