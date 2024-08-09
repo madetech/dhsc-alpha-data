@@ -101,7 +101,7 @@
 										"container": "raw",
 										"filepath": "Fingertips/Indicators",
 										"filename": {
-											"value": "@concat('indicator_', concat(item().value, '.csv'))",
+											"value": "@concat('indicator_', concat(item().indicator_id, '.csv'))",
 											"type": "Expression"
 										}
 									}
@@ -164,7 +164,7 @@
 										"container": "raw",
 										"filepath": "Fingertips/Indicators",
 										"filename": {
-											"value": "@concat('indicator_', concat(item().value, '.csv'))",
+											"value": "@concat('indicator_', concat(item().indicator_id, '.csv'))",
 											"type": "Expression"
 										}
 									}
