@@ -1,6 +1,60 @@
 {
 	"name": "Indicator metadata",
 	"properties": {
+		"activities": [
+			{
+				"name": "Get indicators json",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Binary_FingertipsAPI",
+						"type": "DatasetReference",
+						"parameters": {
+							"RelativeURL": "indicator_metadata/all"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Binary_Datalake",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "raw",
+							"filepath": "Fingertips/Indicator_Metadata",
+							"filename": "indicators.json"
+						}
+					}
+				]
+			}
+		],
 		"folder": {
 			"name": "Fingertips"
 		},
