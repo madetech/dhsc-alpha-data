@@ -49,6 +49,7 @@
 						"value": "@activity('Get enabled indicator ids').output.value",
 						"type": "Expression"
 					},
+					"batchCount": 5,
 					"activities": [
 						{
 							"name": "Ingestion worker",
@@ -76,7 +77,7 @@
 				}
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "Staging to curated table",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
