@@ -76,7 +76,7 @@
 				}
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "Staging to curated table",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
