@@ -82,7 +82,7 @@
 					{
 						"activity": "Ingest each indicator id",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
