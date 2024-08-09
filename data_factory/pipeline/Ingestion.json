@@ -106,6 +106,79 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "Lake to SQL",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "Web to lake",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false,
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "CSV_Lake",
+									"type": "DatasetReference",
+									"parameters": {
+										"container": "raw",
+										"filepath": "Fingertips/Indicators",
+										"filename": {
+											"value": "@concat('indicator_', concat(item().value, '.csv'))",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "SQLTable",
+									"type": "DatasetReference",
+									"parameters": {
+										"schema": "Fingertips",
+										"table_name": "indicators_staging"
+									}
+								}
+							]
 						}
 					]
 				}
