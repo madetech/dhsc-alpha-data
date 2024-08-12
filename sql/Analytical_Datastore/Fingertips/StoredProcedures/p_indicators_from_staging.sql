@@ -1,10 +1,11 @@
 
 CREATE PROCEDURE Fingertips.p_indicators_from_staging AS
 BEGIN
+    -- DROP PROC [Fingertips].[p_indicators_from_staging]
     -- exec Fingertips.p_indicators_from_staging
     -- Delete all indicators from the indicators table that are in the staging table
     DELETE FROM Fingertips.indicators
-    WHERE indicator_id in (select distinct indicator_id from Fingertips.indicators_staging)
+    WHERE indicator_id IN (SELECT DISTINCT [Indicator ID] FROM Fingertips.indicators_staging)
 
     -- Insert all indicators from the staging table into the indicators table
     INSERT INTO Fingertips.indicators
@@ -42,4 +43,3 @@ BEGIN
     DROP TABLE Fingertips.indicators_staging
 END
 GO
-
