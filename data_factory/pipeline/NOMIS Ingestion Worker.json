@@ -141,7 +141,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"schema": "NOMIS",
-							"table_name": "metrics_staging"
+							"table_name": {
+								"value": "@concat('metric_', concat(pipeline().parameters.metric_id, '_staging'))",
+								"type": "Expression"
+							}
 						}
 					}
 				]
