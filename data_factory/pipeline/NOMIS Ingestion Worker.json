@@ -148,6 +148,46 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Lake to SQL",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "NOMIS.p_standardise_datasets",
+					"storedProcedureParameters": {
+						"MetricID": {
+							"value": {
+								"value": "@pipeline().parameters.metric_id",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"TableName": {
+							"value": "@concat('metric_', concat(pipeline().parameters.metric_id, '_staging'))",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Analytical_Datastore",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"parameters": {
