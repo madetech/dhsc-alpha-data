@@ -25,6 +25,9 @@
         },
         "DAPAlphaKeyVaultEndpoint_properties_privateLinkResourceId": {
             "value": "/subscriptions/211beb99-abed-432d-b6b5-6b0a0b3bb4ac/resourceGroups/coreinfra-rg/providers/Microsoft.KeyVault/vaults/dapalpha-kv-prod"
+        },
+        "KeyVault_properties_typeProperties_baseUrl": {
+            "value": "https://dapalpha-kv-prod.vault.azure.net/"
         }
     }
 }
