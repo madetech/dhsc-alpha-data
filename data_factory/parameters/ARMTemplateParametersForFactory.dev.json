@@ -22,6 +22,9 @@
         },
         "Indicator_Metadata_Update_properties_typeProperties_scope": {
             "value": "/subscriptions/2466c36e-08aa-4500-80a1-68f1a1492de9/resourceGroups/dapalpha-data-dev-rg/providers/Microsoft.Storage/storageAccounts/dapalphadatastlakedev"
+        },
+        "DAPAlphaKeyVaultEndpoint_properties_privateLinkResourceId": {
+            "value": "/subscriptions/2466c36e-08aa-4500-80a1-68f1a1492de9/resourceGroups/coreinfra-rg/providers/Microsoft.KeyVault/vaults/dapalpha-kv-dev"
         }
     }
 }
