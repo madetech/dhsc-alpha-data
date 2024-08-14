@@ -33,7 +33,7 @@
 				}
 			},
 			{
-				"name": "Ingest each indicator id",
+				"name": "Ingest each metric id",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -66,8 +66,8 @@
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"indicator_id": {
-										"value": "@item().indicator_id",
+									"metric_id": {
+										"value": "@item().metric_id",
 										"type": "Expression"
 									}
 								}
@@ -81,7 +81,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Ingest each indicator id",
+						"activity": "Ingest each metric id",
 						"dependencyConditions": [
 							"Completed"
 						]
