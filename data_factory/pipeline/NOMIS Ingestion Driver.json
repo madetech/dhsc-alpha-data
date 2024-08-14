@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get enabled indicator ids",
+				"name": "Get enabled metric ids",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT DISTINCT indicator_id FROM Fingertips.indicator_metadata\nWHERE enabled = 1",
+						"sqlReaderQuery": "SELECT DISTINCT metric_id FROM NOMIS.metadata\nWHERE enabled = 1",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -25,8 +25,8 @@
 						"referenceName": "SQLTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"schema": "Fingertips",
-							"table_name": "Indicator_Metadata"
+							"schema": "NOMIS",
+							"table_name": "Metadata"
 						}
 					},
 					"firstRowOnly": false
@@ -37,7 +37,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Get enabled indicator ids",
+						"activity": "Get enabled metric ids",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -46,7 +46,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get enabled indicator ids').output.value",
+						"value": "@activity('Get enabled metric ids').output.value",
 						"type": "Expression"
 					},
 					"batchCount": 5,
@@ -61,7 +61,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "Ingestion Worker",
+									"referenceName": "NOMIS Ingestion Worker",
 									"type": "PipelineReference"
 								},
 								"waitOnCompletion": true,
