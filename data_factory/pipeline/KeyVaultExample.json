@@ -16,14 +16,8 @@
 				"userProperties": [],
 				"typeProperties": {
 					"method": "GET",
-					"linkedServices": [
-						{
-							"referenceName": "KeyVault",
-							"type": "LinkedServiceReference"
-						}
-					],
 					"url": {
-						"value": "@concat(\n    'https://'\n    , '',\n    '.vault.azure.net/secrets/test?api-version=7.4'\n)",
+						"value": "@concat(\n    'https://dapalpha-kv-'\n    , replace(pipeline().DataFactory, 'dapalpha-adf-data-', ''),\n    '.vault.azure.net/secrets/test?api-version=7.4'\n)",
 						"type": "Expression"
 					},
 					"connectVia": {
