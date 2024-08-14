@@ -16,30 +16,43 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "BinarySource",
+						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "HttpReadSettings",
 							"requestMethod": "GET"
 						},
 						"formatSettings": {
-							"type": "BinaryReadSettings"
+							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
-						"type": "BinarySink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "Binary_FingertipsAPI",
+						"referenceName": "CSV_NOMIS_API",
 						"type": "DatasetReference",
 						"parameters": {
 							"RelativeURL": {
-								"value": "@concat(\n    'all_data/csv/for_one_indicator?indicator_id=',\n    pipeline().parameters.indicator_id\n)",
+								"value": "@concat(\n    'dataset/',\n    pipeline().parameters.metric_id, '.data.csv'\n)",
 								"type": "Expression"
 							}
 						}
@@ -47,13 +60,13 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Binary_Datalake",
+						"referenceName": "CSV_Lake",
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "raw",
-							"filepath": "Fingertips/Indicators",
+							"filepath": "NOMIS/Metrics",
 							"filename": {
-								"value": "@concat('indicator_', concat(pipeline().parameters.indicator_id, '.csv'))",
+								"value": "@concat('metric_', concat(pipeline().parameters.metric_id, '.csv'))",
 								"type": "Expression"
 							}
 						}
@@ -114,9 +127,9 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "raw",
-							"filepath": "Fingertips/Indicators",
+							"filepath": "NOMIS/Metrics",
 							"filename": {
-								"value": "@concat('indicator_', concat(pipeline().parameters.indicator_id, '.csv'))",
+								"value": "@concat('metric_', concat(pipeline().parameters.metric_id, '.csv'))",
 								"type": "Expression"
 							}
 						}
@@ -127,15 +140,15 @@
 						"referenceName": "SQLTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"schema": "Fingertips",
-							"table_name": "indicators_staging"
+							"schema": "NOMIS",
+							"table_name": "metrics_staging"
 						}
 					}
 				]
 			}
 		],
 		"parameters": {
-			"indicator_id": {
+			"metric_id": {
 				"type": "string"
 			}
 		},
