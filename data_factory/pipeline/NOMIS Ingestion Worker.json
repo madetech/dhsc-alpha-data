@@ -118,7 +118,7 @@
 				}
 			},
 			{
-				"name": "Iterate offset",
+				"name": "Web to Lake iterate",
 				"type": "Until",
 				"dependsOn": [
 					{
@@ -281,6 +281,76 @@
 					"variableName": "RecordOffset",
 					"value": 0
 				}
+			},
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Web to Lake iterate",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "@concat('NOMIS/Metrics/Metric_',pipeline().parameters.metric_id)",
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CSV_Lake",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "raw"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "NOMIS",
+							"table_name": "@concat('metric_', concat(pipeline().parameters.metric_id, '_staging'))"
+						}
+					}
+				]
 			}
 		],
 		"parameters": {
