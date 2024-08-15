@@ -3,77 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Web to lake",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 5,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "HttpReadSettings",
-							"requestMethod": "GET"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
-					},
-					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "CSV_NOMIS_API",
-						"type": "DatasetReference",
-						"parameters": {
-							"RelativeURL": {
-								"value": "@concat(\n    'dataset/',\n    pipeline().parameters.metric_id, '.data.csv?uid=', variables('NOMIS-API-key')\n)",
-								"type": "Expression"
-							}
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "CSV_Lake",
-						"type": "DatasetReference",
-						"parameters": {
-							"container": "raw",
-							"filepath": "NOMIS/Metrics",
-							"filename": {
-								"value": "@concat('metric_', concat(pipeline().parameters.metric_id, '.csv'))",
-								"type": "Expression"
-							}
-						}
-					}
-				]
-			},
-			{
 				"name": "Get secret",
 				"type": "WebActivity",
 				"dependsOn": [],
@@ -207,7 +136,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy data1",
+							"name": "Web to lake",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -285,7 +214,7 @@
 							"type": "SetVariable",
 							"dependsOn": [
 								{
-									"activity": "Copy data1",
+									"activity": "Web to lake",
 									"dependencyConditions": [
 										"Succeeded"
 									]
