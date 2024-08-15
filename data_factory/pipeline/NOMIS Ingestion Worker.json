@@ -334,7 +334,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CSV_Lake",
+						"referenceName": "CSV_Lake_Wildcard",
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "raw"
