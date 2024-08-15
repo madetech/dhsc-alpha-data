@@ -1,0 +1,68 @@
+{
+	"name": "KeyVaultExample",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get secret",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": true,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"url": {
+						"value": "@concat(\n    'https://dapalpha-kv-'\n    , replace(pipeline().DataFactory, 'dapalpha-adf-data-', ''),\n    '.vault.azure.net/secrets/test?api-version=7.4'\n)",
+						"type": "Expression"
+					},
+					"connectVia": {
+						"referenceName": "DAPAlpha-IR",
+						"type": "IntegrationRuntimeReference"
+					},
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://vault.azure.net/"
+					}
+				}
+			},
+			{
+				"name": "Set secret",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Get secret",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": true,
+					"secureInput": true
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Secret",
+					"value": {
+						"value": "@activity('Get secret').output.value",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"Secret": {
+				"type": "String"
+			},
+			"NOMIS-API-key": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}

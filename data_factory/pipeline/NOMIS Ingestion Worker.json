@@ -5,7 +5,14 @@
 			{
 				"name": "Web to lake",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set secret",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 5,
@@ -52,7 +59,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"RelativeURL": {
-								"value": "@concat(\n    'dataset/',\n    pipeline().parameters.metric_id, '.data.csv'\n)",
+								"value": "@concat(\n    'dataset/',\n    pipeline().parameters.metric_id, '.data.csv?uid=', variables('NOMIS-API-key')\n)",
 								"type": "Expression"
 							}
 						}
@@ -179,7 +186,10 @@
 							"type": "String"
 						},
 						"TableName": {
-							"value": "@concat('metric_', concat(pipeline().parameters.metric_id, '_staging'))",
+							"value": {
+								"value": "@concat('metric_', concat(pipeline().parameters.metric_id, '_staging'))",
+								"type": "Expression"
+							},
 							"type": "String"
 						}
 					}
@@ -188,11 +198,68 @@
 					"referenceName": "Analytical_Datastore",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "Get secret",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": true,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"url": {
+						"value": "@concat(\n    'https://dapalpha-kv-'\n    , replace(pipeline().DataFactory, 'dapalpha-adf-data-', ''),\n    '.vault.azure.net/secrets/NOMIS-API?api-version=7.4'\n)",
+						"type": "Expression"
+					},
+					"connectVia": {
+						"referenceName": "DAPAlpha-IR",
+						"type": "IntegrationRuntimeReference"
+					},
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://vault.azure.net/"
+					}
+				}
+			},
+			{
+				"name": "Set secret",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Get secret",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": true,
+					"secureInput": true
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "NOMIS-API-key",
+					"value": {
+						"value": "@activity('Get secret').output.value",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
 			"metric_id": {
 				"type": "string"
+			}
+		},
+		"variables": {
+			"NOMIS-API-key": {
+				"type": "String"
 			}
 		},
 		"folder": {
