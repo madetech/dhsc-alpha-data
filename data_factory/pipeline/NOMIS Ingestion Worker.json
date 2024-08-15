@@ -250,6 +250,92 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "Get number of rows",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "CSV_NOMIS_API",
+						"type": "DatasetReference",
+						"parameters": {
+							"RelativeURL": "@concat(     'dataset/',     pipeline().parameters.metric_id, '.data.csv?uid=', variables('NOMIS-API-key') )"
+						}
+					}
+				}
+			},
+			{
+				"name": "Set RecordCount",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Get number of rows",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "RecordCount",
+					"value": {
+						"value": "@activity('Get number of rows').output.firstRow.RECORD_COUNT",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Until1",
+				"type": "Until",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"timeout": "0.12:00:00"
+				}
+			},
+			{
+				"name": "Initialise RecordOffset",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Set RecordCount",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "RecordOffset",
+					"value": 0
+				}
 			}
 		],
 		"parameters": {
@@ -260,6 +346,12 @@
 		"variables": {
 			"NOMIS-API-key": {
 				"type": "String"
+			},
+			"RecordCount": {
+				"type": "Integer"
+			},
+			"RecordOffset": {
+				"type": "Integer"
 			}
 		},
 		"folder": {
