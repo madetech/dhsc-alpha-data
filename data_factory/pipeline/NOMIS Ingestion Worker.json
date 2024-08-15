@@ -283,7 +283,7 @@
 				}
 			},
 			{
-				"name": "Copy data1",
+				"name": "Lake to SQL",
 				"type": "Copy",
 				"dependsOn": [
 					{
