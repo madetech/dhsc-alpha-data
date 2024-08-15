@@ -307,8 +307,6 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "@concat('NOMIS/Metrics/Metric_',pipeline().parameters.metric_id)",
-							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -337,7 +335,9 @@
 						"referenceName": "CSV_Lake",
 						"type": "DatasetReference",
 						"parameters": {
-							"container": "raw"
+							"container": "raw",
+							"filepath": "@concat('NOMIS/Metrics/Metric_',pipeline().parameters.metric_id)",
+							"filename": "*.csv"
 						}
 					}
 				],
