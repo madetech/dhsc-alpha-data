@@ -112,7 +112,7 @@
 				"typeProperties": {
 					"variableName": "RecordCount",
 					"value": {
-						"value": "@activity('Get number of rows').output.firstRow.RECORD_COUNT",
+						"value": "@int(activity('Get number of rows').output.firstRow.RECORD_COUNT)",
 						"type": "Expression"
 					}
 				}
