@@ -26,7 +26,7 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "ASCOF/Metrics/",
+							"wildcardFolderPath": "ASCOF/Metrics",
 							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
