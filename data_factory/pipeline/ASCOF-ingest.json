@@ -66,7 +66,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"schema": "ASCOF",
-							"table_name": "all_metrics_staging"
+							"table_name": "all_metrics_staging_test"
 						}
 					}
 				]
