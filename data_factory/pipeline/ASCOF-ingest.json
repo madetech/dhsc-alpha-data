@@ -84,8 +84,12 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "CSV_Lake",
-						"type": "DatasetReference"
+						"referenceName": "CSV_Lake_Folder",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "raw",
+							"filepath": "ASCOF/Metrics"
+						}
 					},
 					"fieldList": [
 						"childItems"
