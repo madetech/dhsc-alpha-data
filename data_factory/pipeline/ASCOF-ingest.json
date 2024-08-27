@@ -26,6 +26,8 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "ASCOF/Metrics",
+							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -122,6 +124,14 @@
 								"sink": {
 									"name": "Measure Group Description"
 								}
+							},
+							{
+								"source": {
+									"name": "FileName"
+								},
+								"sink": {
+									"name": "FileName"
+								}
 							}
 						],
 						"typeConversion": true,
@@ -133,11 +143,10 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CSV_Lake",
+						"referenceName": "CSV_Lake_Wildcard",
 						"type": "DatasetReference",
 						"parameters": {
-							"container": "raw",
-							"filepath": "ASCOF/Metrics"
+							"container": "raw"
 						}
 					}
 				],
