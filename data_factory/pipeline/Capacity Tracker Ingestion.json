@@ -199,7 +199,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"RelativeURL": {
-											"value": "@concat(     'v4.8/?key=', variables('CAPACITY-TRACKER-API-KEY'), '&limit=40000&offset=',variables('RecordOffset') )",
+											"value": "@concat(     'v4.8/?key=', variables('CAPACITY-TRACKER-API-KEY'), '&limit=',variables('RecordCount'),'&offset=',variables('RecordOffset') )",
 											"type": "Expression"
 										}
 									}
