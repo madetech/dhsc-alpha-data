@@ -1,5 +1,5 @@
 {
-	"name": "Json_Generic_CT",
+	"name": "Json_Generic_CT_API",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CTGenericAPIHTTP",
