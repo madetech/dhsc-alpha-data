@@ -70,7 +70,7 @@
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
-					"secureInput": false
+					"secureInput": true
 				},
 				"userProperties": [],
 				"typeProperties": {
@@ -121,8 +121,8 @@
 				}
 			},
 			{
-				"name": "Web to Lake",
-				"type": "Copy",
+				"name": "Initialise RecordOffset",
+				"type": "SetVariable",
 				"dependsOn": [
 					{
 						"activity": "Set RecordCount",
@@ -132,58 +132,147 @@
 					}
 				],
 				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "JsonSource",
-						"storeSettings": {
-							"type": "HttpReadSettings",
-							"requestMethod": "GET"
-						},
-						"formatSettings": {
-							"type": "JsonReadSettings"
-						}
-					},
-					"sink": {
-						"type": "JsonSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "JsonWriteSettings"
-						}
-					},
-					"enableStaging": false
-				},
-				"inputs": [
+					"variableName": "RecordOffset",
+					"value": 0
+				}
+			},
+			{
+				"name": "Web to Lake iterate",
+				"type": "Until",
+				"dependsOn": [
 					{
-						"referenceName": "Json_Generic_CT_API",
-						"type": "DatasetReference",
-						"parameters": {
-							"RelativeURL": {
-								"value": "@concat(     'v4.8/?key=', variables('CAPACITY-TRACKER-API-KEY'), '&limit=',variables('RecordCount') )",
-								"type": "Expression"
-							}
-						}
+						"activity": "Initialise RecordOffset",
+						"dependencyConditions": [
+							"Succeeded"
+						]
 					}
 				],
-				"outputs": [
-					{
-						"referenceName": "Json_Datalake",
-						"type": "DatasetReference",
-						"parameters": {
-							"container": "raw",
-							"filepath": "Capacity_Tracker",
-							"filename": "generic"
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@greater(variables('RecordOffset'),variables('RecordCount'))",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Web to lake",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": true
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "JsonSource",
+									"storeSettings": {
+										"type": "HttpReadSettings",
+										"requestMethod": "GET"
+									},
+									"formatSettings": {
+										"type": "JsonReadSettings"
+									}
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "Json_Generic_CT_API",
+									"type": "DatasetReference",
+									"parameters": {
+										"RelativeURL": {
+											"value": "@concat(     'v4.8/?key=', variables('CAPACITY-TRACKER-API-KEY'), '&offset=',variables('RecordOffset') )",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "CSV_Lake",
+									"type": "DatasetReference",
+									"parameters": {
+										"container": "raw",
+										"filepath": "generic",
+										"filename": {
+											"value": "@concat('offset_', variables('RecordOffset'), '.csv')",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						},
+						{
+							"name": "Update RecordOffset temp",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Web to lake",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "RecordOffsetTemp",
+								"value": {
+									"value": "@variables('RecordOffset')",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Update RecordOffset",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Update RecordOffset temp",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "RecordOffset",
+								"value": {
+									"value": "@add(variables('RecordOffsetTemp'),10)",
+									"type": "Expression"
+								}
+							}
 						}
-					}
-				]
+					],
+					"timeout": "0.12:00:00"
+				}
 			}
 		],
 		"variables": {
@@ -192,6 +281,12 @@
 			},
 			"CAPACITY-TRACKER-API-KEY": {
 				"type": "String"
+			},
+			"RecordOffset": {
+				"type": "Integer"
+			},
+			"RecordOffsetTemp": {
+				"type": "Integer"
 			}
 		},
 		"folder": {
