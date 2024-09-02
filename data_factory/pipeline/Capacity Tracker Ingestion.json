@@ -199,7 +199,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"RelativeURL": {
-											"value": "@concat(     'v4.8/?key=', variables('CAPACITY-TRACKER-API-KEY'), '&limit=',variables('RecordCount'),'&offset=',variables('RecordOffset') )",
+											"value": "@concat(     'v4.8/?key=', variables('CAPACITY-TRACKER-API-KEY'), '&limit=10000','&offset=',variables('RecordOffset') )",
 											"type": "Expression"
 										}
 									}
@@ -263,7 +263,7 @@
 							"typeProperties": {
 								"variableName": "RecordOffset",
 								"value": {
-									"value": "@add(variables('RecordOffsetTemp'),40000)",
+									"value": "@add(variables('RecordOffsetTemp'),10000)",
 									"type": "Expression"
 								}
 							}
