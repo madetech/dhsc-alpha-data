@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy metrics from lake to SQL",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -20,7 +20,7 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "Capacity_Tracker/Generic/ct_main.parquet/",
+							"wildcardFolderPath": "Capacity_Tracker/Generic/ct_metrics.parquet/",
 							"wildcardFileName": "*.parquet",
 							"enablePartitionDiscovery": false
 						},
