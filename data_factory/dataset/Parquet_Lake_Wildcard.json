@@ -1,5 +1,5 @@
 {
-	"name": "Parquet_Lake",
+	"name": "Parquet_Lake_Wildcard",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Datalake",
@@ -8,12 +8,6 @@
 		"parameters": {
 			"container": {
 				"type": "string"
-			},
-			"filepath": {
-				"type": "string"
-			},
-			"filename": {
-				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -21,14 +15,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().filename",
-					"type": "Expression"
-				},
-				"folderPath": {
-					"value": "@dataset().filepath",
-					"type": "Expression"
-				},
 				"fileSystem": {
 					"value": "@dataset().container",
 					"type": "Expression"
