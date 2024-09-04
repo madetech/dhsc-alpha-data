@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lake to SQL",
+				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -20,13 +20,31 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "Capacity_Tracker/Generic/ct_main.parquet/",
+							"wildcardFileName": "*.parquet",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
 							"type": "ParquetReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "DROP TABLE IF EXISTS Capacity_Tracker.all_metrics",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
@@ -34,6 +52,16 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "reporting"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQLTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "Capacity_Tracker",
+							"table_name": "all_metrics"
 						}
 					}
 				]
