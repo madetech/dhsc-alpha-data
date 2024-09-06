@@ -80,7 +80,7 @@ stages:
                 # Check if file exists and is a regular file
                 if [[ -f "$FILE" ]]; then
                     # Use Perl-compatible regex (-P) with -i for in-place replacement and -e for the expression
-                    sed -i -e "s/$REGEX_PATTERN/$REPLACEMENT_TEXT/g" "$FILE"
+                    sed -i -e "s|$REGEX_PATTERN|$REPLACEMENT_TEXT|g" "$FILE"
                     echo "Replaced in $FILE"
                 fi
             done
