@@ -1,0 +1,9 @@
+{
+	"name": "Capacity Tracker Databricks",
+	"properties": {
+		"folder": {
+			"name": "Capacity Tracker"
+		},
+		"annotations": []
+	}
+}
