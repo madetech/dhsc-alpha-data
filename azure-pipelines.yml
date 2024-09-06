@@ -76,7 +76,7 @@ stages:
             REPLACEMENT_TEXT='/pipeline_workspace/'
             
             # Loop through all JSON files in the directory.
-            for FILE in "$(Build.Repository.LocalPath)/data_factory/ArmTemplate/*.json"; do
+            for FILE in data_factory/ArmTemplate/*.json; do
                 # Check if file exists and is a regular file
                 if [[ -f "$FILE" ]]; then
                     # Use Perl-compatible regex (-P) with -i for in-place replacement and -e for the expression
@@ -84,6 +84,7 @@ stages:
                     echo "Replaced in $FILE"
                 fi
             done
+          workingDirectory: '$(Build.Repository.LocalPath)'
 
       # Publish the artifact to be used as a source for a release pipeline.
 
