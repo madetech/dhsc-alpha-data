@@ -1,0 +1,9 @@
+{
+	"name": "Capacity Tracker Driver",
+	"properties": {
+		"folder": {
+			"name": "Capacity Tracker"
+		},
+		"annotations": []
+	}
+}
