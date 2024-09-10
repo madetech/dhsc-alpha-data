@@ -346,6 +346,16 @@ UNPIVOT
 
 -- Execute the dynamic SQL
 EXEC sp_executesql @sql;
+
+DROP TABLE [ASC_Statistics].[occupancy_visiting_workforce_table_1_staging];
+DROP TABLE [ASC_Statistics].[occupancy_visiting_workforce_table_2_staging];
+DROP TABLE [ASC_Statistics].[occupancy_visiting_workforce_table_3_staging];
+DROP TABLE [ASC_Statistics].[occupancy_visiting_workforce_table_4_staging];
+DROP TABLE [ASC_Statistics].[occupancy_visiting_workforce_table_5_staging];
+DROP TABLE [ASC_Statistics].[occupancy_visiting_workforce_table_6_staging];
+DROP TABLE [ASC_Statistics].[occupancy_visiting_workforce_table_7_staging];
+DROP TABLE [ASC_Statistics].[occupancy_visiting_workforce_table_8_staging];
+
 END;
 GO
 
