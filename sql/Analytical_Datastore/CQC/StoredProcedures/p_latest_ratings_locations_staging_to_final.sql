@@ -36,7 +36,6 @@ SELECT
 INTO [CQC].[latest_ratings_locations]
 FROM [CQC].[latest_ratings_locations_staging]
 
-DROP TABLE IF EXISTS [CQC].[latest_ratings_locations_staging];
 
 END;
 GO

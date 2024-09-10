@@ -29,8 +29,6 @@ SELECT
 INTO [CQC].[latest_ratings_providers]
 FROM [CQC].[latest_ratings_providers_staging]
 
-DROP TABLE IF EXISTS [CQC].[latest_ratings_providers_staging];
-
 END;
 GO
 

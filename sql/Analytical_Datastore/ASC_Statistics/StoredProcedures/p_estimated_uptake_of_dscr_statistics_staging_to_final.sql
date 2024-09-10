@@ -64,9 +64,6 @@ UNPIVOT
             [May 2024]
         )
 ) AS unpvt;
-
-DROP TABLE IF EXISTS [ASC_Statistics].[estimated_uptake_of_dscr_statistics_staging];
-
 END;
 GO
 

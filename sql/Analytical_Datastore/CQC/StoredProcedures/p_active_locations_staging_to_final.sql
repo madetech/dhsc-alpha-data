@@ -5,7 +5,6 @@ BEGIN
 DROP TABLE IF EXISTS [CQC].[active_locations];
 
 SELECT
-    CAST(REPLACE(FileName, '.csv', '') AS INT) AS month,
     [Location ID] AS location_id,
     TRY_CAST([Location HSCA start date] AS DATE) AS location_hsca_start_date,
     CASE WHEN [Dormant (Y/N)] = 'Y' THEN 1 ELSE 0 END AS dormant,
@@ -13,7 +12,7 @@ SELECT
     [Location Name] AS location_name,
     [Location ODS Code] AS location_ods_code,
     [Location Telephone Number] AS location_telephone_number,
-    --[Registered manager] AS registered_manager,
+    [Registered manager] AS registered_manager,
     [Location Web Address] AS location_web_address,
     TRY_CAST([Care homes beds] AS INT) AS care_homes_beds,
     [Location Type/Sector] AS location_type_sector,
@@ -66,7 +65,7 @@ SELECT
     TRY_CAST([Provider Longitude] AS FLOAT) AS provider_longitude,
     [Provider Parliamentary Constituency] AS provider_parliamentary_constituency,
     [Provider Nominated Individual Name] AS provider_nominated_individual_name,
-    --[Provider Main Partner Name] AS provider_main_partner_name,
+    [Provider Main Partner Name] AS provider_main_partner_name,
     CASE WHEN [Regulated activity - Accommodation for persons who require nursing or personal care] = 'Y' THEN 1 ELSE 0 END AS regulated_activity_accommodation_for_persons_who_require_nursing_or_personal_care,
     CASE WHEN [Regulated activity - Accommodation for persons who require treatment for substance misuse] = 'Y' THEN 1 ELSE 0 END AS regulated_activity_accommodation_for_persons_who_require_treatment_for_substance_misuse,
     CASE WHEN [Regulated activity - Assessment or medical treatment for persons detained under the Mental Health Act 1983] = 'Y' THEN 1 ELSE 0 END AS regulated_activity_assessment_or_medical_treatment_for_persons_detained_under_the_mental_health_act_1983,
@@ -127,8 +126,6 @@ SELECT
     CASE WHEN [Service user band - Younger Adults] = 'Y' THEN 1 ELSE 0 END AS service_user_band_younger_adults
     INTO [CQC].[active_locations]
     FROM [CQC].[active_locations_staging];
-
-DROP TABLE IF EXISTS [CQC].[active_locations_staging];
 
 END;
 GO

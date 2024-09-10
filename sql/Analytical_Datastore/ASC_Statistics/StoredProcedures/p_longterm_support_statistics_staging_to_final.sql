@@ -54,9 +54,6 @@ UNPIVOT
             [31/12/2023]
         )
 ) AS unpvt;
-
-DROP TABLE IF EXISTS [ASC_Statistics].[longterm_support_statistics_staging];
-
 END;
 GO
 

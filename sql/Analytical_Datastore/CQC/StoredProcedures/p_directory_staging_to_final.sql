@@ -23,8 +23,6 @@ SELECT
 INTO [CQC].[directory]
 FROM [CQC].[directory_staging];
 
-DROP TABLE IF EXISTS [CQC].[directory_staging];
-
 END;
 GO
 

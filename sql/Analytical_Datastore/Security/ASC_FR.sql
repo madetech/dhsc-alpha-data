@@ -1,4 +1,0 @@
-CREATE SCHEMA [ASC_FR]
-    AUTHORIZATION [dbo];
-GO
-
