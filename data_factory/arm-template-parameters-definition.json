@@ -1,12 +1,13 @@
 {
     "Microsoft.DataFactory/factories/linkedServices": {
-        "AzureDatabricks": {
+        "*": {
             "properties": {
-                "typeProperties": {
-                    "domain": "=",
-                    "workspaceResourceId": "="
-                }
+                "typeProperties": {}
             }
         }
+    },
+    "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints": {
+        "name": "-",
+        "properties": "-"
     }
 }
