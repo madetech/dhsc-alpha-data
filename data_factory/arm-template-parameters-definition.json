@@ -7,7 +7,7 @@
         }
     },
     "Microsoft.DataFactory/factories/linkedServices": {
-        "Analytical_Datastore": {
+        "AzureSqlDatabase": {
             "properties": {
                 "typeProperties": {
                     "server": "=",
@@ -15,12 +15,10 @@
                 }
             }
         },
-        "Datalake": {
+        "AzureBlobFS": {
             "properties": {
                 "typeProperties": {
-                    "url": "=",
-                    "existingClusterId": "=",
-                    "workspaceResourceId": "="
+                    "url": "="
                 }
             }
         },
@@ -28,21 +26,15 @@
             "properties": {
                 "typeProperties": {
                     "domain": "=",
-                    "workspaceResourceId": "="
+                    "workspaceResourceId": "=",
+                    "existingClusterId": "="
                 }
             }
         }
     },
     "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints": {
-        "DAPAlphaDatalakeEndpoint": {
-            "properties": {
-                "privateLinkResourceId": "="
-            }
-        },
-        "DAPAlphaSQLServerEndpoint": {
-            "properties": {
-                "privateLinkResourceId": "="
-            }
+        "properties": {
+            "privateLinkResourceId": "="
         }
     }
 }
