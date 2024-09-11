@@ -1,8 +1,27 @@
 {
+    "Microsoft.DataFactory/factories/triggers": {
+        "properties": {
+            "typeProperties": {
+                "scope": "="
+            }
+        }
+    },
     "Microsoft.DataFactory/factories/linkedServices": {
-        "*": {
+        "Analytical_Datastore": {
             "properties": {
-                "typeProperties": {}
+                "typeProperties": {
+                    "server": "=",
+                    "database": "="
+                }
+            }
+        },
+        "Datalake": {
+            "properties": {
+                "typeProperties": {
+                    "url": "=",
+                    "existingClusterId": "=",
+                    "workspaceResourceId": "="
+                }
             }
         },
         "AzureDatabricks": {
@@ -15,7 +34,15 @@
         }
     },
     "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints": {
-        "name": "-",
-        "properties": "-"
+        "DAPAlphaDatalakeEndpoint": {
+            "properties": {
+                "privateLinkResourceId": "="
+            }
+        },
+        "DAPAlphaSQLServerEndpoint": {
+            "properties": {
+                "privateLinkResourceId": "="
+            }
+        }
     }
 }
