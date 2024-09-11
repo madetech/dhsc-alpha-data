@@ -22,6 +22,15 @@
         },
         "Indicator_Metadata_Update_properties_typeProperties_scope": {
             "value": "/subscriptions/211beb99-abed-432d-b6b5-6b0a0b3bb4ac/resourceGroups/dapalpha-data-prod-rg/providers/Microsoft.Storage/storageAccounts/dapalphadatastlakeprod"
+        },
+        "Databricks_properties_typeProperties_domain": {
+            "value": "https://adb-1249483876363372.12.azuredatabricks.net/"
+        },
+        "Databricks_properties_typeProperties_workspaceResourceId": {
+            "value": "/subscriptions/211beb99-abed-432d-b6b5-6b0a0b3bb4ac/resourceGroups/dapalpha-data-prod-rg/providers/Microsoft.Databricks/workspaces/dapalpha-dbx-data-prod"
+        },
+        "Databricks_properties_typeProperties_existingClusterId": {
+            "value": "0911-132319-wcrviv55"
         }
     }
 }
