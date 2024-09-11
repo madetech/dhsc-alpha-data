@@ -93,7 +93,7 @@ ct_main.createOrReplaceTempView("ct_main")
 
 # COMMAND ----------
 
-# Write DataFrame to storage as a single CSV file in the curated container with headers
+# Write DataFrame to storage as a single CSV file in the processed container
 ct_main.coalesce(1).write.format("parquet").mode("overwrite").option("header", "true").save("abfss://processed@dapalphadatastlakedev.dfs.core.windows.net/Capacity_Tracker/Generic/ct_main.parquet")
 
 # COMMAND ----------
@@ -174,7 +174,7 @@ region_metrics_unpivoted.createOrReplaceTempView("region_metrics_unpivoted")
 
 # COMMAND ----------
 
-# Union the unpivoted DataFrame with another DataFrame
+# Union the regional, LA, and provider metrics
 ct_metrics = spark.sql(
     '''
     SELECT
