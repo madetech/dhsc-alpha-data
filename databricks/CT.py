@@ -2,6 +2,7 @@
 from pyspark.sql.functions import explode, flatten, col
 from pyspark.sql import functions as F
 from pyspark.sql.types import StructType, ArrayType
+import os
 
 # COMMAND ----------
 
@@ -19,7 +20,16 @@ def flatten_schema(schema, prefix=None):
 
 # COMMAND ----------
 
-data = spark.read.format("json").load("abfss://raw@dapalphadatastlakedev.dfs.core.windows.net/Capacity_Tracker/Generic/*").collect()
+# Get environment variable
+environment = os.getenv("ENV")
+
+raw_container_path = "abfss://raw@dapalphadatastlake" + environment + ".dfs.core.windows.net/"
+processed_container_path = "abfss://processed@dapalphadatastlake" + environment + ".dfs.core.windows.net/"
+reporting_container_path = "abfss://reporting@dapalphadatastlake" + environment + ".dfs.core.windows.net/"
+
+# COMMAND ----------
+
+data = spark.read.format("json").load(raw_container_path + "Capacity_Tracker/Generic/*").collect()
 
 # COMMAND ----------
 
@@ -93,8 +103,8 @@ ct_main.createOrReplaceTempView("ct_main")
 
 # COMMAND ----------
 
-# Write DataFrame to storage as a single CSV file in the processed container
-ct_main.coalesce(1).write.format("parquet").mode("overwrite").option("header", "true").save("abfss://processed@dapalphadatastlakedev.dfs.core.windows.net/Capacity_Tracker/Generic/ct_main.parquet")
+# Write DataFrame to processed container
+ct_main.coalesce(1).write.format("parquet").mode("overwrite").option("header", "true").save(processed_container_path + "Capacity_Tracker/Generic/ct_main.parquet")
 
 # COMMAND ----------
 
@@ -214,5 +224,5 @@ ct_metrics = spark.sql(
 
 # COMMAND ----------
 
-# Write DataFrame to storage as a single CSV file in the curated container with headers
-ct_metrics.coalesce(1).write.format("parquet").mode("overwrite").option("header", "true").save("abfss://reporting@dapalphadatastlakedev.dfs.core.windows.net/Capacity_Tracker/Generic/ct_metrics.parquet")
+# Write DataFrame to reporting container
+ct_metrics.coalesce(1).write.format("parquet").mode("overwrite").option("header", "true").save(reporting_container_path + "Capacity_Tracker/Generic/ct_metrics.parquet")
