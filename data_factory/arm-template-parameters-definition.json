@@ -4,6 +4,14 @@
             "properties": {
                 "typeProperties": {}
             }
+        },
+        "AzureDatabricks": {
+            "properties": {
+                "typeProperties": {
+                    "domain": "=",
+                    "workspaceResourceId": "="
+                }
+            }
         }
     },
     "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints": {
