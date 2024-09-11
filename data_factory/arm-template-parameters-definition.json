@@ -1,0 +1,12 @@
+{
+    "Microsoft.DataFactory/factories/linkedServices": {
+        "AzureDatabricks": {
+            "properties": {
+                "typeProperties": {
+                    "domain": "=",
+                    "workspaceResourceId": "="
+                }
+            }
+        }
+    }
+}
