@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Lake to SQL",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -30,7 +30,9 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -232,14 +234,45 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SQL_CQC_DIRECTORY",
-						"type": "DatasetReference"
+						"referenceName": "SQLTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "CQC",
+							"table_name": "directory_staging"
+						}
 					}
 				]
+			},
+			{
+				"name": "Staging to curated table",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Lake to SQL",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[CQC].[p_directory_staging_to_final]"
+				},
+				"linkedServiceName": {
+					"referenceName": "Analytical_Datastore",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"folder": {
-			"name": "CQC_Static/CQC-Directory"
+			"name": "CQC_Static"
 		},
 		"annotations": []
 	}

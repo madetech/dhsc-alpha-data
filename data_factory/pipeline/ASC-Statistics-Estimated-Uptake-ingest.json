@@ -26,7 +26,9 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -444,14 +446,45 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SQL_ASC_STATISTICS_ESTIMATED_UPTAKE",
-						"type": "DatasetReference"
+						"referenceName": "SQLTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "ASC_Statistics",
+							"table_name": "estimated_uptake_of_dscr_statistics_staging"
+						}
 					}
 				]
+			},
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[ASC_Statistics].[p_estimated_uptake_of_dscr_statistics_staging_to_final]"
+				},
+				"linkedServiceName": {
+					"referenceName": "Analytical_Datastore",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"folder": {
-			"name": "ASC_Statistics/ASC-Statistics-Estimated-Uptake"
+			"name": "ASC_Statistics"
 		},
 		"annotations": []
 	}

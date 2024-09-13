@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Lake to SQL",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -72,11 +72,11 @@
 				]
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "Staging to curated table",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Copy data1",
+						"activity": "Lake to SQL",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -99,9 +99,6 @@
 				}
 			}
 		],
-		"folder": {
-			"name": "ASCOF"
-		},
 		"annotations": []
 	}
 }
