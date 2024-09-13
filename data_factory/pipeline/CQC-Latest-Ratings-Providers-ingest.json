@@ -306,7 +306,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"schema": "CQC",
-							"table_name": "latest_ratings_providers"
+							"table_name": "latest_ratings_providers_staging"
 						}
 					}
 				]
