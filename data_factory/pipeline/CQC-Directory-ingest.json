@@ -238,7 +238,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"schema": "CQC",
-							"table_name": "directory"
+							"table_name": "directory_staging"
 						}
 					}
 				]
