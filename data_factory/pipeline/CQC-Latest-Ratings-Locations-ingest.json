@@ -26,7 +26,9 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -384,8 +386,12 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SQL_CQC_LATEST_RATINGS_LOCATIONS",
-						"type": "DatasetReference"
+						"referenceName": "SQLTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "CQC",
+							"table_name": "latest_ratings_locations"
+						}
 					}
 				]
 			}
