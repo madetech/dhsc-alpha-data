@@ -1,5 +1,5 @@
 {
-	"name": "ASCOF-ingest",
+	"name": "ASC-FR-ingest",
 	"properties": {
 		"activities": [
 			{
@@ -26,7 +26,7 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "ASCOF/Metrics",
+							"wildcardFolderPath": "ASC_FR/Metrics",
 							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
@@ -65,7 +65,7 @@
 						"referenceName": "SQLTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"schema": "ASCOF",
+							"schema": "ASC_FR",
 							"table_name": "all_metrics_staging"
 						}
 					}
@@ -91,7 +91,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "ASCOF.p_all_metrics_staging_to_final"
+					"storedProcedureName": "ASC_FR.p_all_metrics_staging_to_final"
 				},
 				"linkedServiceName": {
 					"referenceName": "Analytical_Datastore",
@@ -100,7 +100,7 @@
 			}
 		],
 		"folder": {
-			"name": "ASCOF"
+			"name": "ASC-FR"
 		},
 		"annotations": []
 	}

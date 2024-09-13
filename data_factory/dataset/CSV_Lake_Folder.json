@@ -1,35 +1,37 @@
 {
-	"name": "ascof_ref",
+	"name": "CSV_Lake_Folder",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Datalake",
 			"type": "LinkedServiceReference"
 		},
-		"folder": {
-			"name": "ASCOF"
+		"parameters": {
+			"container": {
+				"type": "string"
+			},
+			"filepath": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "ascof_ref.csv",
-				"fileSystem": "raw"
+				"folderPath": {
+					"value": "@dataset().filepath",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().container",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "Fiscal Year",
-				"type": "String"
-			},
-			{
-				"name": "Link",
-				"type": "String"
-			}
-		]
+		"schema": []
 	}
 }
