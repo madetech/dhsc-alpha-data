@@ -117,8 +117,8 @@ provider_metrics = spark.sql(
         la_code,
         la_name,
         la_region_name,
-        workforce_hours_agency / workforce_hours_paid AS percentage_workforce_hours_agency,
-        workforce_hours_overtime / workforce_hours_paid AS percentage_workforce_hours_overtime
+        workforce_hours_agency / (workforce_hours_paid + workforce_hours_agency) AS percentage_workforce_hours_agency,
+        workforce_hours_overtime / workforce_hours_paid AS percentage_direct_workforce_hours_overtime
     FROM ct_main
     '''
 )
@@ -130,7 +130,7 @@ provider_metrics_unpivoted = provider_metrics.selectExpr(
     "la_code",
     "la_name",
     "la_region_name",
-    "stack(2, 'Percentage of total hours worked that are agency', percentage_workforce_hours_agency, 'Percentage of total hours worked that are overtime', percentage_workforce_hours_overtime) as (metric, value)"
+    "stack(2, 'Percentage of total hours worked that are agency', percentage_workforce_hours_agency, 'Percentage of total hours worked by direct employees that are overtime', percentage_direct_workforce_hours_overtime) as (metric, value)"
 )
 provider_metrics_unpivoted.createOrReplaceTempView("provider_metrics_unpivoted")
 
@@ -143,8 +143,8 @@ la_metrics = spark.sql(
         la_code,
         la_name,
         la_region_name,
-        SUM(workforce_hours_agency) / SUM(workforce_hours_paid) AS percentage_workforce_hours_agency,
-        SUM(workforce_hours_overtime) / SUM(workforce_hours_paid) AS percentage_workforce_hours_overtime
+        SUM(workforce_hours_agency) / (SUM(workforce_hours_paid) + SUM(workforce_hours_agency)) AS percentage_workforce_hours_agency,
+        SUM(workforce_hours_overtime) / SUM(workforce_hours_paid) AS percentage_direct_workforce_hours_overtime
     FROM ct_main
     GROUP BY
         la_code,
@@ -157,7 +157,7 @@ la_metrics_unpivoted = la_metrics.selectExpr(
     "la_code",
     "la_name",
     "la_region_name",
-    "stack(2, 'Percentage of total hours worked that are agency', percentage_workforce_hours_agency, 'Percentage of total hours worked that are overtime', percentage_workforce_hours_overtime) as (metric, value)"
+    "stack(2, 'Percentage of total hours worked that are agency', percentage_workforce_hours_agency, 'Percentage of total hours worked by direct employees that are overtime', percentage_direct_workforce_hours_overtime) as (metric, value)"
 )
 la_metrics_unpivoted.createOrReplaceTempView("la_metrics_unpivoted")
 
@@ -168,8 +168,8 @@ region_metrics = spark.sql(
     '''
     SELECT
         la_region_name,
-        SUM(workforce_hours_agency) / SUM(workforce_hours_paid) AS percentage_workforce_hours_agency,
-        SUM(workforce_hours_overtime) / SUM(workforce_hours_paid) AS percentage_workforce_hours_overtime
+        SUM(workforce_hours_agency) / (SUM(workforce_hours_paid) + SUM(workforce_hours_agency)) AS percentage_workforce_hours_agency,
+        SUM(workforce_hours_overtime) / SUM(workforce_hours_paid) AS percentage_direct_workforce_hours_overtime
     FROM ct_main
     GROUP BY
         la_region_name
@@ -178,7 +178,7 @@ region_metrics = spark.sql(
 
 region_metrics_unpivoted = region_metrics.selectExpr(
     "la_region_name",
-    "stack(2, 'Percentage of total hours worked that are agency', percentage_workforce_hours_agency, 'Percentage of total hours worked that are overtime', percentage_workforce_hours_overtime) as (metric, value)"
+    "stack(2, 'Percentage of total hours worked that are agency', percentage_workforce_hours_agency, 'Percentage of total hours worked by direct employees that are overtime', percentage_direct_workforce_hours_overtime) as (metric, value)"
 )
 region_metrics_unpivoted.createOrReplaceTempView("region_metrics_unpivoted")
 
