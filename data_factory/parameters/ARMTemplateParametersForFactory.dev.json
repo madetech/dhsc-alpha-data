@@ -32,9 +32,6 @@
         "Databricks_properties_typeProperties_existingClusterId": {
             "value": "0905-112434-gmukp89"
         },
-        "DataLakeDropEndpoint_properties_privateLinkResourceId":{
-            "value": "/subscriptions/2466c36e-08aa-4500-80a1-68f1a1492de9/resourceGroups/dapalpha-data-dev-rg/providers/Microsoft.Storage/storageAccounts/dapalphastdropdev"
-        },
         "DataLakeBronzeEndpoint_properties_privateLinkResourceId":{
             "value": "/subscriptions/2466c36e-08aa-4500-80a1-68f1a1492de9/resourceGroups/dapalpha-data-dev-rg/providers/Microsoft.Storage/storageAccounts/dapalphastbronzedev"
         },
@@ -43,9 +40,6 @@
         },
         "DataLakeGoldEndpoint_properties_privateLinkResourceId":{
             "value": "/subscriptions/2466c36e-08aa-4500-80a1-68f1a1492de9/resourceGroups/dapalpha-data-dev-rg/providers/Microsoft.Storage/storageAccounts/dapalphastgolddev"
-        },
-        "DataLakeDrop_properties_typeProperties_url": {
-            "value": "https://dapalphastdropdev.dfs.core.windows.net/"
         },
         "DataLakeBronze_properties_typeProperties_url": {
             "value": "https://dapalphastbronzedev.dfs.core.windows.net/"
