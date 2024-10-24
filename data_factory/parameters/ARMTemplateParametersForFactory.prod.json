@@ -31,6 +31,30 @@
         },
         "Databricks_properties_typeProperties_existingClusterId": {
             "value": "0911-132319-wcrviv55"
+        },
+        "DataLakeDropEndpoint_properties_privateLinkResourceId":{
+            "value": "/subscriptions/211beb99-abed-432d-b6b5-6b0a0b3bb4ac/resourceGroups/dapalpha-data-prod-rg/providers/Microsoft.Storage/storageAccounts/dapalphastdropprod"
+        },
+        "DataLakeBronzeEndpoint_properties_privateLinkResourceId":{
+            "value": "/subscriptions/211beb99-abed-432d-b6b5-6b0a0b3bb4ac/resourceGroups/dapalpha-data-prod-rg/providers/Microsoft.Storage/storageAccounts/dapalphastbronzeprod"
+        },
+        "DataLakeSilverEndpoint_properties_privateLinkResourceId":{
+            "value": "/subscriptions/211beb99-abed-432d-b6b5-6b0a0b3bb4ac/resourceGroups/dapalpha-data-prod-rg/providers/Microsoft.Storage/storageAccounts/dapalphastsilverprod"
+        },
+        "DataLakeGoldEndpoint_properties_privateLinkResourceId":{
+            "value": "/subscriptions/211beb99-abed-432d-b6b5-6b0a0b3bb4ac/resourceGroups/dapalpha-data-prod-rg/providers/Microsoft.Storage/storageAccounts/dapalphastgoldprod"
+        },
+        "DataLakeDrop_properties_typeProperties_url": {
+            "value": "https://dapalphastdropprod.dfs.core.windows.net/"
+        },
+        "DataLakeBronze_properties_typeProperties_url": {
+            "value": "https://dapalphastbronzeprod.dfs.core.windows.net/"
+        },
+        "DataLakeSilver_properties_typeProperties_url": {
+            "value": "https://dapalphastsilverprod.dfs.core.windows.net/"
+        },
+        "DataLakeGold_properties_typeProperties_url": {
+            "value": "https://dapalphastgoldprod.dfs.core.windows.net/"
         }
     }
 }
